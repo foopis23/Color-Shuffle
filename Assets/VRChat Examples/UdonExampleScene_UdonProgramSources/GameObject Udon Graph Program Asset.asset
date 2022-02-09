@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
+  m_Name: GameObject Udon Graph Program Asset
+  m_EditorClassIdentifier: 
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 8c649d3ad9851e442a61c1c8225f731d,
+    type: 2}
+  udonAssembly: ".data_start\r\n\r\n    \r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n\r\n.code_end\r\n"
+  assemblyError: 
+  graphData:
+    name: 
+    description: 
+    nodes:
+    - fullName: Event_Interact
+      uid: f8bf83a0-1620-47e7-9121-26a6d95678f7
+      position: {x: 220, y: 390}
+      nodeUIDs: []
+      flowUIDs: []
+      nodeValues: []
+    updateOrder: 0
+  graphElementData: []
+  viewTransform:
+    position: {x: 402, y: -276}
+    scale: 0.8695652
+  version: 1.0.0
+  showAssembly: 0
