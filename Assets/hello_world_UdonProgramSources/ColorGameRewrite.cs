@@ -1,105 +1,118 @@
-﻿
-using System;
-using UdonSharp;
+﻿using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
-using VRC.Udon;
+using VRC.Udon.Common.Interfaces;
 
 public class ColorGameRewrite : UdonSharpBehaviour
 {
+    [Header("Game Properties")]
+    [SerializeField] private int colorCount;
+    [SerializeField] private int secondsBetweenRounds = 3;
+    [SerializeField] private int secondsBetweenDisableFloor = 5;
+    [SerializeField] private int secondsBetweenRoundEnd = 5;
 
-    [SerializeField] private GameObject platformContainer;
-    [SerializeField] private MeshRenderer[] colorRenderers;
+    [Header("Teleport Points")]
     [SerializeField] private Transform startPoint;
+    [SerializeField] private Transform respawnPoint;
+    
+    [Header("Scripts")]    
+    [SerializeField] private PlatformManager platformManager;
+    [SerializeField] private ColorDisplayManager colorDisplayManager;
 
-    [Header("Materials")]
-    [SerializeField] private Material[] colorMaterials;
-    [SerializeField] private Material[] displayColors;
-    [SerializeField] private int colorRendererIndex = 1;
-
-    private MeshRenderer[] _platforms;
-    [UdonSynced()]
-    private int[] _dataPlatformsColors;
-    [UdonSynced()]
-    private bool[] _dataPlatformInactive;
-    [UdonSynced()]
+    [UdonSynced] private int lastRoundsSurvived = 0;
+    [UdonSynced] private string lastWinnerName;
+    [UdonSynced] private int roundCount = 0;
+    [UdonSynced] private bool isPlaying = false;
+    private VRCPlayerApi[] players = new VRCPlayerApi[16];
+    
     private int _dataCurrentColor;
 
-    private VRCPlayerApi[] _players;
-    private bool _isGameRunning;
-
-    void Start()
+    public void OnGameStart()
     {
-        _players = new VRCPlayerApi[16];
-        _platforms = GetComponentsInChildren<MeshRenderer>();
-        _dataPlatformInactive = new bool[_platforms.Length];
-        _dataPlatformsColors = new int[_platforms.Length];
-
-        ResetGame();
-    }
-
-    void ResetGame()
-    {
-        for (var i = 0; i < _platforms.Length; i++)
+        if (!Networking.IsOwner(Networking.LocalPlayer, gameObject)) return;
+        
+        roundCount = 0;
+        VRCPlayerApi.GetPlayers(players);
+        
+        foreach (var player in players)
         {
-            _dataPlatformInactive[i] = false;
-            _dataPlatformsColors[i] = 0;
+            if (player == null) continue;
+            player.SetPlayerTag("alive", "true");
+            player.TeleportTo(startPoint.position, startPoint.rotation);
         }
+
+        OnRoundStart();
     }
 
-    void RandomizeCurrentColor()
+    public void OnGameEnd()
     {
-        _dataCurrentColor = UnityEngine.Random.Range(0, colorMaterials.Length);
+        if (!Networking.IsOwner(Networking.LocalPlayer, gameObject)) return;
+        isPlaying = false;
+        roundCount = 0;
     }
 
-    void RandomizePlatformColors()
+    public void OnRoundStart()
     {
-        for (var i = 0; i < _dataPlatformsColors.Length; i++)
+        if (!Networking.IsOwner(Networking.LocalPlayer, gameObject)) return;
+        if (isPlaying) return;
+        isPlaying = true;
+        
+        _dataCurrentColor = Random.Range(0, colorCount);
+        colorDisplayManager.CurrentColorIndex = _dataCurrentColor;
+        platformManager.CurrentColorIndex = _dataCurrentColor;
+        platformManager.RandomizeFloorColor();
+        roundCount++;
+        
+        SendCustomEventDelayedSeconds("OnRoundFloorHide", secondsBetweenDisableFloor);
+    }
+
+    public void OnRoundFloorHide()
+    {
+        if (!Networking.IsOwner(Networking.LocalPlayer, gameObject)) return;
+        platformManager.HideTilesByColor();
+        
+        SendCustomEventDelayedSeconds("OnRoundFloorHide", secondsBetweenRoundEnd);
+    }
+
+    public void OnRoundFinished()
+    {
+        if (!Networking.IsOwner(Networking.LocalPlayer, gameObject)) return;
+        _dataCurrentColor = 0;
+        colorDisplayManager.CurrentColorIndex = _dataCurrentColor;
+        platformManager.CurrentColorIndex = _dataCurrentColor;
+        platformManager.ResetToInitialState();
+
+        var aliveCount = 0;
+        VRCPlayerApi winner = null;
+        
+        foreach (var player in players)
         {
-            _dataPlatformsColors[i] = UnityEngine.Random.Range(0, colorMaterials.Length);
+            if (aliveCount > 1) break;
+            if (player == null) continue;
+            if (player.GetPlayerTag("alive") != "true") continue;
+            
+            winner = player;
+            aliveCount++;
         }
-    }
 
-    void DisablePlatforms()
-    {
-        for (var i = 0; i < _platforms.Length; i++)
+        switch (aliveCount)
         {
-            _platforms[i].gameObject.SetActive(_dataPlatformsColors[i] != _dataCurrentColor);
-        }
-    }
-
-    void ResetPlatformStates()
-    {
-        for (var i = 0; i < _platforms.Length; i++)
-        {
-            _dataPlatformInactive[i] = false;
-            _dataPlatformsColors[i] = 0;
-        }
-    }
-
-    public override void OnDeserialization()
-    {
-        OnUpdatePlatforms();
-        OnUpdateCurrentColorDisplays();
-    }
-
-    void OnUpdatePlatforms()
-    {
-        for (var i = 0; i < _platforms.Length; i++)
-        {
-            var platform = _platforms[i];
-            var color = colorMaterials[_dataPlatformsColors[i]];
-            var inactive = _dataPlatformInactive[i];
-            platform.material = color;
-            platform.gameObject.SetActive(!inactive);
-        }
-    }
-
-    void OnUpdateCurrentColorDisplays()
-    {
-        foreach (var colorRenderer in colorRenderers)
-        {
-            colorRenderer.materials[colorRendererIndex] = displayColors[_dataCurrentColor];
+            case 0:
+                // TIE Game
+                lastWinnerName = "Tie";
+                lastRoundsSurvived = roundCount;
+                OnGameEnd();
+                break;
+            case 1:
+                // WINNER
+                lastWinnerName = winner.displayName;
+                lastRoundsSurvived = roundCount;
+                winner.TeleportTo(startPoint.position, startPoint.rotation);
+                OnGameEnd();
+                break;
+            default:
+                SendCustomEventDelayedSeconds("OnRoundStart", secondsBetweenRounds);
+                break;
         }
     }
 }
