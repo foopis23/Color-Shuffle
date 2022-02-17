@@ -560,7 +560,7 @@ MonoBehaviour:
         stringValue: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|1
     - fullName: VRCSDKBaseVRCPlayerApiArray.__Get__SystemInt32__VRCSDKBaseVRCPlayerApi
       uid: 66ed8db5-0e53-4dd0-80da-145379b175b4
-      position: {x: 104.80875, y: 1139.1414}
+      position: {x: 157.90001, y: 1127.5}
       nodeUIDs:
       - 0cc4a4fd-e9a5-4cc5-8076-fa8b4a8c34ff|0
       - 491bdd8c-ce28-42de-93b9-0924e0f22a13|0
@@ -1887,7 +1887,7 @@ MonoBehaviour:
     jsonData: '{"visible":true,"layout":{"serializedVersion":"2","x":4.0,"y":20.0,"width":200.0,"height":100.0}}'
   - type: 2
     uid: 867914be-84f4-4c9b-9159-d6197a77bf12
-    jsonData: '{"uid":"867914be-84f4-4c9b-9159-d6197a77bf12","layout":{"serializedVersion":"2","x":-1071.0,"y":755.0,"width":2429.0,"height":675.0},"containedElements":["99224e4f-4c09-4be8-8628-2bfab80e63f2","491bdd8c-ce28-42de-93b9-0924e0f22a13","66ed8db5-0e53-4dd0-80da-145379b175b4","ad9f1694-53a9-4e14-ae81-3d84632ac22a","f578541f-3140-4495-a79b-82256b37010e","7a9a5d9d-a210-4631-a95f-055b08a8c62c","a6cf21b1-a039-44d5-83d7-4c070f466a25","859781f5-738d-44ce-86bd-7577dab2b58b","fdb974b4-67f9-47a2-ab03-05808895e0c8","655da38a-5863-4442-89d6-3e4b8752ae3a","7c2aef32-dee0-4363-8ddb-8b0465cc92dd","856e2bbd-391b-4b54-81b3-cfe5d437613d","9cb807f7-5ebb-402a-bf43-8805a57a3e27","8e0dedb6-219a-4d88-aa72-a3f44674e284","4524a15a-9d86-4920-8c79-da791781b800","0cc4a4fd-e9a5-4cc5-8076-fa8b4a8c34ff","b4e81927-7515-4246-92bf-1189bdef79d5","f0474267-4e40-420b-8446-5c2a584344a7","9675984a-5260-4025-ae7f-bd8e1707ff95","95acbaad-6486-447d-9ddc-b880052591b0"],"title":"Check
+    jsonData: '{"uid":"867914be-84f4-4c9b-9159-d6197a77bf12","layout":{"serializedVersion":"2","x":-1071.0001220703125,"y":755.0,"width":2428.0,"height":675.0},"containedElements":["99224e4f-4c09-4be8-8628-2bfab80e63f2","491bdd8c-ce28-42de-93b9-0924e0f22a13","66ed8db5-0e53-4dd0-80da-145379b175b4","ad9f1694-53a9-4e14-ae81-3d84632ac22a","f578541f-3140-4495-a79b-82256b37010e","7a9a5d9d-a210-4631-a95f-055b08a8c62c","a6cf21b1-a039-44d5-83d7-4c070f466a25","859781f5-738d-44ce-86bd-7577dab2b58b","fdb974b4-67f9-47a2-ab03-05808895e0c8","655da38a-5863-4442-89d6-3e4b8752ae3a","7c2aef32-dee0-4363-8ddb-8b0465cc92dd","856e2bbd-391b-4b54-81b3-cfe5d437613d","9cb807f7-5ebb-402a-bf43-8805a57a3e27","8e0dedb6-219a-4d88-aa72-a3f44674e284","4524a15a-9d86-4920-8c79-da791781b800","0cc4a4fd-e9a5-4cc5-8076-fa8b4a8c34ff","b4e81927-7515-4246-92bf-1189bdef79d5","f0474267-4e40-420b-8446-5c2a584344a7","9675984a-5260-4025-ae7f-bd8e1707ff95","95acbaad-6486-447d-9ddc-b880052591b0"],"title":"Check
       if game is over (Owner)","layer":0,"elementTypeColor":{"r":0.0,"g":0.0,"b":0.0,"a":0.0}}'
   - type: 2
     uid: 100ad888-85e4-4ee9-bb3a-6c7df23c1c86
@@ -1922,7 +1922,7 @@ MonoBehaviour:
     jsonData: '{"uid":"425a6e6f-e4b0-43d1-a9f3-370eb202ebca","layout":{"serializedVersion":"2","x":1393.0,"y":806.0,"width":871.0,"height":396.0},"containedElements":["0b3ea460-8ab7-43d1-bb04-7b55de431c81","219c1ffd-0557-4113-805d-706da23a2795","c759bd2e-c97b-42b6-a919-1dccdb8f202d","e3fc5449-b5c5-4225-8a45-f77a89d7ae70","6bf74589-e890-4d78-97c9-53988a4fa163","80d936f3-f1ba-4cac-a773-62ff407cd915"],"title":"Set
       Time Survived (Owner)","layer":0,"elementTypeColor":{"r":0.0,"g":0.0,"b":0.0,"a":0.0}}'
   viewTransform:
-    position: {x: -1191, y: -372}
-    scale: 1
+    position: {x: 131, y: 464}
+    scale: 0.2
   version: 1.0.0
   showAssembly: 0

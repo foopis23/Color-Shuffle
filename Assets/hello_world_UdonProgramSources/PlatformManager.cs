@@ -1,21 +1,21 @@
 using UdonSharp;
 using UnityEngine;
-using VRC.Udon.Common.Interfaces;
 using VRC.SDKBase;
 
 public class PlatformManager : UdonSharpBehaviour
 {
-    [SerializeField] private GameObject platformContainer;
-    [SerializeField] private Material[] colorMaterials;
+    public GameObject platformContainer;
+    public Material[] colorMaterials;
 
     private MeshRenderer[] _platforms;
     [UdonSynced] private int[] _dataPlatformsColors;
     [UdonSynced] private bool[] _dataPlatformInactive;
-    [UdonSynced] public int CurrentColorIndex = 0;
+    [UdonSynced][HideInInspector] public int currentColorIndex = 0;
 
     private void Start()
     {
-        _platforms = GetComponentsInChildren<MeshRenderer>();
+        currentColorIndex = 0;
+        _platforms = platformContainer.transform.GetComponentsInChildren<MeshRenderer>();
         _dataPlatformInactive = new bool[_platforms.Length];
         _dataPlatformsColors = new int[_platforms.Length];
         
@@ -41,7 +41,7 @@ public class PlatformManager : UdonSharpBehaviour
         
         for (var i = 0; i < _dataPlatformsColors.Length; i++)
         {
-            _dataPlatformsColors[i] = Random.Range(0, colorMaterials.Length);
+            _dataPlatformsColors[i] = Random.Range(1, colorMaterials.Length);
         }
         
         OnFloorStateUpdate();
@@ -53,7 +53,7 @@ public class PlatformManager : UdonSharpBehaviour
         
         for (var i = 0; i < _platforms.Length; i++)
         {
-            _platforms[i].gameObject.SetActive(_dataPlatformsColors[i] != CurrentColorIndex);
+            _dataPlatformInactive[i] = _dataPlatformsColors[i] != currentColorIndex;
         }
         
         OnFloorStateUpdate();
@@ -61,6 +61,14 @@ public class PlatformManager : UdonSharpBehaviour
 
     public override void OnDeserialization()
     {
+        OnFloorStateUpdate();
+    }
+
+    public void SyncState()
+    {
+        if (!Networking.IsOwner(Networking.LocalPlayer, gameObject)) return;
+        
+        RequestSerialization();
         OnFloorStateUpdate();
     }
 

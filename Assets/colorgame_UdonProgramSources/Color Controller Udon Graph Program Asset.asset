@@ -907,7 +907,7 @@ MonoBehaviour:
     uid: e1521a9b-da69-43de-9519-43aa20585b0a
     jsonData: '{"uid":"e1521a9b-da69-43de-9519-43aa20585b0a","layout":{"serializedVersion":"2","x":3125.0,"y":-2051.0,"width":1576.0,"height":522.0},"containedElements":[],"title":"Group","layer":0,"elementTypeColor":{"r":0.0,"g":0.0,"b":0.0,"a":0.0}}'
   viewTransform:
-    position: {x: -99, y: 683}
-    scale: 0.2
+    position: {x: 591, y: 346}
+    scale: 0.43232757
   version: 1.0.0
   showAssembly: 0

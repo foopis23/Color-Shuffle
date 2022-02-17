@@ -14,286 +14,301 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serializedUdonProgramAsset: {fileID: 11400000, guid: 151daacac1851dd47a1ab4e805600a1f,
     type: 2}
-  udonAssembly: ".data_start\n\n    .export PlatformContainer\n    .export ColorMaterials\n   
-    .export ColorRenderers\n    .export DisplayMaterials\n    .export StartPoint\n   
-    .export ColorRendererArrayMap\n    .sync dataCurrentColor, none\n    .sync dataPlatformsColors,
-    none\n    .sync dataPlatformsInactive, none\n    .sync isGameRunning, none\n   
-    \n    __Int32_0: %SystemInt32, null\n    __Type_0: %SystemType, null\n    __Type_1:
-    %SystemType, null\n    __index_0: %SystemInt32, null\n    __condition_0: %SystemBoolean,
-    null\n    __instance_2: %UnityEngineGameObjectArray, null\n    __value_0: %SystemObject,
-    null\n    __index_1: %SystemInt32, null\n    __instance_3: %UnityEngineComponent,
-    null\n    __instance_4: %UnityEngineComponentArray, null\n    __Int32_1: %SystemInt32,
-    null\n    __Type_2: %SystemType, null\n    __Type_3: %SystemType, null\n    __start_0:
-    %SystemInt32, null\n    __end_0: %SystemInt32, null\n    __step_0: %SystemInt32,
-    null\n    __instance_0: %UnityEngineComponentArray, null\n    __instance_1: %UnityEngineGameObject,
-    this\n    __type_0: %SystemType, null\n    __Type_4: %SystemType, null\n    __Int32_2:
-    %SystemInt32, null\n    __instance_5: %UnityEngineGameObjectArray, null\n   
-    __Int32_3: %SystemInt32, null\n    __instance_6: %UnityEngineGameObjectArray,
-    null\n    __Int32_4: %SystemInt32, null\n    __min_0: %SystemInt32, null\n   
-    __max_0: %SystemInt32, null\n    __instance_7: %UnityEngineMaterialArray, null\n   
-    __index_2: %SystemInt32, null\n    __condition_1: %SystemBoolean, null\n    __instance_9:
-    %SystemInt32Array, null\n    __value_1: %SystemObject, null\n    __index_3: %SystemInt32,
-    null\n    __min_1: %SystemInt32, null\n    __max_1: %SystemInt32, null\n    __instance_A:
-    %UnityEngineMaterialArray, null\n    __start_1: %SystemInt32, null\n    __end_1:
-    %SystemInt32, null\n    __step_1: %SystemInt32, null\n    __instance_8: %UnityEngineGameObjectArray,
-    null\n    __instance_B: %VRCUdonUdonBehaviour, this\n    __instance_C: %VRCUdonUdonBehaviour,
-    this\n    __eventName_0: %SystemString, null\n    __String_0: %SystemString,
-    null\n    __instance_D: %VRCUdonUdonBehaviour, this\n    __eventName_1: %SystemString,
-    null\n    __String_1: %SystemString, null\n    __index_4: %SystemInt32, null\n   
-    __condition_2: %SystemBoolean, null\n    __instance_F: %UnityEngineMeshRenderer,
-    null\n    __value_2: %UnityEngineMaterial, null\n    __instance_10: %UnityEngineGameObject,
-    this\n    __type_1: %SystemType, null\n    __Type_5: %SystemType, null\n    __instance_12:
-    %UnityEngineMaterialArray, null\n    __Int32_6: %SystemInt32, null\n    __instance_13:
-    %SystemInt32Array, null\n    __Int32_7: %SystemInt32, null\n    __instance_14:
-    %UnityEngineGameObject, this\n    __value_3: %SystemBoolean, null\n    __instance_11:
-    %UnityEngineGameObjectArray, null\n    __Int32_5: %SystemInt32, null\n    __Boolean_0:
-    %SystemBoolean, null\n    __instance_15: %SystemBooleanArray, null\n    __Int32_8:
-    %SystemInt32, null\n    __start_2: %SystemInt32, null\n    __end_2: %SystemInt32,
-    null\n    __step_2: %SystemInt32, null\n    __instance_E: %UnityEngineGameObjectArray,
-    null\n    __index_5: %SystemInt32, null\n    __condition_3: %SystemBoolean, null\n   
-    __instance_17: %UnityEngineMaterialArray, null\n    __Int32_9: %SystemInt32,
-    null\n    __Material_0: %UnityEngineMaterial, null\n    __instance_18: %UnityEngineMaterialArray,
-    null\n    __Int32_A: %SystemInt32, null\n    __instance_19: %UnityEngineMeshRenderer,
-    null\n    __value_4: %UnityEngineMaterialArray, null\n    __instance_1A: %UnityEngineMeshRendererArray,
-    null\n    __Int32_B: %SystemInt32, null\n    __start_3: %SystemInt32, null\n   
-    __end_3: %SystemInt32, null\n    __step_3: %SystemInt32, null\n    __instance_16:
-    %UnityEngineMeshRendererArray, null\n    __index_6: %SystemInt32, null\n    __condition_4:
-    %SystemBoolean, null\n    __instance_1C: %SystemBooleanArray, null\n    __Int32_C:
-    %SystemInt32, null\n    __Boolean_1: %SystemBoolean, null\n    __Boolean_2: %SystemBoolean,
-    null\n    __Int32_D: %SystemInt32, null\n    __Int32_E: %SystemInt32, null\n   
-    __instance_1D: %SystemInt32Array, null\n    __Int32_F: %SystemInt32, null\n   
-    __start_4: %SystemInt32, null\n    __end_4: %SystemInt32, null\n    __step_4:
-    %SystemInt32, null\n    __instance_1B: %UnityEngineGameObjectArray, null\n   
-    __instance_1E: %VRCUdonUdonBehaviour, this\n    __instance_1F: %VRCUdonUdonBehaviour,
-    this\n    __eventName_2: %SystemString, null\n    __String_2: %SystemString,
-    null\n    __index_7: %SystemInt32, null\n    __condition_5: %SystemBoolean, null\n   
-    __instance_21: %SystemInt32Array, null\n    __value_5: %SystemObject, null\n   
-    __index_8: %SystemInt32, null\n    __Int32_10: %SystemInt32, null\n    __instance_22:
-    %SystemBooleanArray, null\n    __Int32_11: %SystemInt32, null\n    __Boolean_3:
-    %SystemBoolean, null\n    __start_5: %SystemInt32, null\n    __end_5: %SystemInt32,
-    null\n    __step_5: %SystemInt32, null\n    __instance_20: %UnityEngineGameObjectArray,
-    null\n    __Int32_12: %SystemInt32, null\n    __instance_23: %VRCUdonUdonBehaviour,
-    this\n    __instance_24: %VRCUdonUdonBehaviour, this\n    __eventName_3: %SystemString,
-    null\n    __String_3: %SystemString, null\n    __instance_25: %VRCUdonUdonBehaviour,
-    this\n    __index_9: %SystemInt32, null\n    __condition_6: %SystemBoolean, null\n   
-    __instance_27: %SystemInt32Array, null\n    __value_6: %SystemObject, null\n   
-    __index_A: %SystemInt32, null\n    __Int32_13: %SystemInt32, null\n    __instance_28:
-    %SystemBooleanArray, null\n    __Int32_14: %SystemInt32, null\n    __Boolean_4:
-    %SystemBoolean, null\n    __start_6: %SystemInt32, null\n    __end_6: %SystemInt32,
-    null\n    __step_6: %SystemInt32, null\n    __instance_26: %UnityEngineGameObjectArray,
-    null\n    __Boolean_5: %SystemBoolean, null\n    __Int32_15: %SystemInt32, null\n   
-    __instance_29: %VRCUdonUdonBehaviour, this\n    __instance_2A: %VRCUdonUdonBehaviour,
-    this\n    __eventName_4: %SystemString, null\n    __String_4: %SystemString,
-    null\n    __index_B: %SystemInt32, null\n    __condition_7: %SystemBoolean, null\n   
-    __instance_2C: %SystemInt32Array, null\n    __value_7: %SystemObject, null\n   
-    __index_C: %SystemInt32, null\n    __Int32_16: %SystemInt32, null\n    __instance_2D:
-    %SystemBooleanArray, null\n    __Int32_17: %SystemInt32, null\n    __Boolean_6:
-    %SystemBoolean, null\n    __start_7: %SystemInt32, null\n    __end_7: %SystemInt32,
-    null\n    __step_7: %SystemInt32, null\n    __instance_2B: %UnityEngineGameObjectArray,
-    null\n    __Int32_18: %SystemInt32, null\n    __instance_2E: %VRCUdonUdonBehaviour,
-    this\n    __instance_2F: %VRCUdonUdonBehaviour, this\n    __eventName_5: %SystemString,
-    null\n    __String_5: %SystemString, null\n    PlatformContainer: %UnityEngineGameObject,
-    this\n    platforms: %UnityEngineGameObjectArray, null\n    ColorMaterials: %UnityEngineMaterialArray,
-    null\n    dataCurrentColor: %SystemInt32, null\n    dataPlatformsColors: %SystemInt32Array,
-    null\n    dataPlatformsInactive: %SystemBooleanArray, null\n    ColorRenderers:
-    %UnityEngineMeshRendererArray, null\n    DisplayMaterials: %UnityEngineMaterialArray,
-    null\n    StartPoint: %UnityEngineTransform, this\n    players: %VRCSDKBaseVRCPlayerApiArray,
-    null\n    isGameRunning: %SystemBoolean, null\n    ColorRendererArrayMap: %UnityEngineMaterialArray,
-    null\n\n.data_end\n\n.code_start\n\n    .export _start\n    \n    _start:\n   
-    \n        PUSH, PlatformContainer\n        PUSH, __instance_1\n        COPY\n       
-    PUSH, __Type_0\n        PUSH, __type_0\n        COPY\n        PUSH, __instance_1\n       
-    PUSH, __type_0\n        PUSH, __instance_0\n        EXTERN, \"UnityEngineGameObject.__GetComponentsInChildren__SystemType__UnityEngineComponentArray\"\n       
-    PUSH, __instance_0\n        PUSH, __Int32_0\n        EXTERN, \"UnityEngineComponentArray.__get_Length__SystemInt32\"\n       
-    PUSH, __Int32_0\n        PUSH, platforms\n        EXTERN, \"UnityEngineGameObjectArray.__ctor__SystemInt32__UnityEngineGameObjectArray\"\n       
-    PUSH, PlatformContainer\n        PUSH, __instance_1\n        COPY\n        PUSH,
-    __Type_1\n        PUSH, __type_0\n        COPY\n        PUSH, __Int32_0\n       
-    PUSH, __end_0\n        COPY\n        PUSH, __start_0\n        PUSH, __index_0\n       
-    COPY\n        PUSH, __index_0\n        PUSH, __Int32_0\n        PUSH, __condition_0\n       
-    EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __condition_0\n        JUMP_IF_FALSE, 0x00000268\n        PUSH, platforms\n       
-    PUSH, __instance_2\n        COPY\n        PUSH, PlatformContainer\n        PUSH,
-    __instance_1\n        COPY\n        PUSH, __Type_2\n        PUSH, __type_0\n       
-    COPY\n        PUSH, __instance_0\n        PUSH, __instance_4\n        COPY\n       
-    PUSH, PlatformContainer\n        PUSH, __instance_1\n        COPY\n        PUSH,
-    __Type_3\n        PUSH, __type_0\n        COPY\n        PUSH, __Int32_0\n       
-    PUSH, __end_0\n        COPY\n        PUSH, __index_0\n        PUSH, __Int32_1\n       
-    COPY\n        PUSH, __instance_0\n        PUSH, __Int32_1\n        PUSH, __instance_3\n       
-    EXTERN, \"UnityEngineComponentArray.__Get__SystemInt32__UnityEngineComponent\"\n       
-    PUSH, __instance_3\n        PUSH, __value_0\n        EXTERN, \"UnityEngineComponent.__get_gameObject__UnityEngineGameObject\"\n       
-    PUSH, PlatformContainer\n        PUSH, __instance_1\n        COPY\n        PUSH,
-    __Type_4\n        PUSH, __type_0\n        COPY\n        PUSH, __Int32_0\n       
-    PUSH, __end_0\n        COPY\n        PUSH, __index_0\n        PUSH, __index_1\n       
-    COPY\n        PUSH, __instance_2\n        PUSH, __value_0\n        PUSH, __index_1\n       
-    EXTERN, \"UnityEngineGameObjectArray.__SetValue__SystemObject_SystemInt32__SystemVoid\"\n       
-    PUSH, __index_0\n        PUSH, __step_0\n        PUSH, __index_0\n        EXTERN,
-    \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\n       
-    JUMP, 0x000000C8\n        PUSH, platforms\n        PUSH, __instance_5\n       
-    COPY\n        PUSH, __instance_5\n        PUSH, __Int32_2\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\n       
-    PUSH, __Int32_2\n        PUSH, dataPlatformsColors\n        EXTERN, \"SystemInt32Array.__ctor__SystemInt32__SystemInt32Array\"\n       
-    PUSH, platforms\n        PUSH, __instance_6\n        COPY\n        PUSH, __instance_6\n       
-    PUSH, __Int32_3\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\n       
-    PUSH, __Int32_3\n        PUSH, dataPlatformsInactive\n        EXTERN, \"SystemBooleanArray.__ctor__SystemInt32__SystemBooleanArray\"\n       
-    PUSH, __Int32_4\n        PUSH, players\n        EXTERN, \"VRCSDKBaseVRCPlayerApiArray.__ctor__SystemInt32__VRCSDKBaseVRCPlayerApiArray\"\n       
-    JUMP, 0xFFFFFFFC\n    \n    .export onChangeColor\n    \n    onChangeColor:\n   
-    \n        PUSH, ColorMaterials\n        PUSH, __instance_7\n        COPY\n       
-    PUSH, __instance_7\n        PUSH, __max_0\n        EXTERN, \"UnityEngineMaterialArray.__get_Length__SystemInt32\"\n       
-    PUSH, __min_0\n        PUSH, __max_0\n        PUSH, dataCurrentColor\n       
-    EXTERN, \"UnityEngineRandom.__Range__SystemInt32_SystemInt32__SystemInt32\"\n       
-    PUSH, platforms\n        PUSH, __instance_8\n        COPY\n        PUSH, __instance_8\n       
-    PUSH, __end_1\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\n       
-    PUSH, __start_1\n        PUSH, __index_2\n        COPY\n        PUSH, __index_2\n       
-    PUSH, __end_1\n        PUSH, __condition_1\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __condition_1\n        JUMP_IF_FALSE, 0x0000049C\n        PUSH, dataPlatformsColors\n       
-    PUSH, __instance_9\n        COPY\n        PUSH, ColorMaterials\n        PUSH,
-    __instance_A\n        COPY\n        PUSH, __instance_A\n        PUSH, __max_1\n       
-    EXTERN, \"UnityEngineMaterialArray.__get_Length__SystemInt32\"\n        PUSH,
-    __min_1\n        PUSH, __max_1\n        PUSH, __value_1\n        EXTERN, \"UnityEngineRandom.__Range__SystemInt32_SystemInt32__SystemInt32\"\n       
-    PUSH, platforms\n        PUSH, __instance_8\n        COPY\n        PUSH, __index_2\n       
-    PUSH, __index_3\n        COPY\n        PUSH, __instance_9\n        PUSH, __value_1\n       
-    PUSH, __index_3\n        EXTERN, \"SystemInt32Array.__SetValue__SystemObject_SystemInt32__SystemVoid\"\n       
-    PUSH, __index_2\n        PUSH, __step_1\n        PUSH, __index_2\n        EXTERN,
-    \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\n       
-    JUMP, 0x0000039C\n        PUSH, __instance_B\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__RequestSerialization__SystemVoid\"\n       
-    PUSH, __String_0\n        PUSH, __eventName_0\n        COPY\n        PUSH, __instance_C\n       
-    PUSH, __eventName_0\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\n       
-    JUMP, 0xFFFFFFFC\n    \n    .export _onDeserialization\n    \n    _onDeserialization:\n   
-    \n        PUSH, __String_1\n        PUSH, __eventName_1\n        COPY\n       
-    PUSH, __instance_D\n        PUSH, __eventName_1\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\n       
-    JUMP, 0xFFFFFFFC\n    \n    .export updatePlatforms\n    \n    updatePlatforms:\n   
-    \n        PUSH, platforms\n        PUSH, __instance_E\n        COPY\n       
-    PUSH, __instance_E\n        PUSH, __end_2\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\n       
-    PUSH, __start_2\n        PUSH, __index_4\n        COPY\n        PUSH, __index_4\n       
-    PUSH, __end_2\n        PUSH, __condition_2\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __condition_2\n        JUMP_IF_FALSE, 0x000007C0\n        PUSH, platforms\n       
-    PUSH, __instance_11\n        COPY\n        PUSH, platforms\n        PUSH, __instance_E\n       
-    COPY\n        PUSH, __index_4\n        PUSH, __Int32_5\n        COPY\n       
-    PUSH, __instance_11\n        PUSH, __Int32_5\n        PUSH, __instance_10\n       
-    EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\n       
-    PUSH, __Type_5\n        PUSH, __type_1\n        COPY\n        PUSH, __instance_10\n       
-    PUSH, __type_1\n        PUSH, __instance_F\n        EXTERN, \"UnityEngineGameObject.__GetComponent__SystemType__UnityEngineComponent\"\n       
-    PUSH, ColorMaterials\n        PUSH, __instance_12\n        COPY\n        PUSH,
-    dataPlatformsColors\n        PUSH, __instance_13\n        COPY\n        PUSH,
-    platforms\n        PUSH, __instance_E\n        COPY\n        PUSH, __index_4\n       
-    PUSH, __Int32_7\n        COPY\n        PUSH, __instance_13\n        PUSH, __Int32_7\n       
-    PUSH, __Int32_6\n        EXTERN, \"SystemInt32Array.__Get__SystemInt32__SystemInt32\"\n       
-    PUSH, __instance_12\n        PUSH, __Int32_6\n        PUSH, __value_2\n       
-    EXTERN, \"UnityEngineMaterialArray.__Get__SystemInt32__UnityEngineMaterial\"\n       
-    PUSH, __instance_F\n        PUSH, __value_2\n        EXTERN, \"UnityEngineMeshRenderer.__set_material__UnityEngineMaterial__SystemVoid\"\n       
-    PUSH, platforms\n        PUSH, __instance_11\n        COPY\n        PUSH, platforms\n       
-    PUSH, __instance_E\n        COPY\n        PUSH, __index_4\n        PUSH, __Int32_5\n       
-    COPY\n        PUSH, __instance_10\n        PUSH, __instance_14\n        COPY\n       
-    PUSH, dataPlatformsInactive\n        PUSH, __instance_15\n        COPY\n       
-    PUSH, platforms\n        PUSH, __instance_E\n        COPY\n        PUSH, __index_4\n       
-    PUSH, __Int32_8\n        COPY\n        PUSH, __instance_15\n        PUSH, __Int32_8\n       
-    PUSH, __Boolean_0\n        EXTERN, \"SystemBooleanArray.__Get__SystemInt32__SystemBoolean\"\n       
-    PUSH, __Boolean_0\n        PUSH, __value_3\n        EXTERN, \"SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean\"\n       
-    PUSH, __instance_10\n        PUSH, __value_3\n        EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\n       
-    PUSH, __index_4\n        PUSH, __step_2\n        PUSH, __index_4\n        EXTERN,
-    \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\n       
-    JUMP, 0x00000554\n        PUSH, ColorRenderers\n        PUSH, __instance_16\n       
-    COPY\n        PUSH, __instance_16\n        PUSH, __end_3\n        EXTERN, \"UnityEngineMeshRendererArray.__get_Length__SystemInt32\"\n       
-    PUSH, __start_3\n        PUSH, __index_5\n        COPY\n        PUSH, __index_5\n       
-    PUSH, __end_3\n        PUSH, __condition_3\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __condition_3\n        JUMP_IF_FALSE, 0x00000948\n        PUSH, ColorRendererArrayMap\n       
-    PUSH, __instance_17\n        COPY\n        PUSH, DisplayMaterials\n        PUSH,
-    __instance_18\n        COPY\n        PUSH, __instance_18\n        PUSH, dataCurrentColor\n       
-    PUSH, __Material_0\n        EXTERN, \"UnityEngineMaterialArray.__Get__SystemInt32__UnityEngineMaterial\"\n       
-    PUSH, __instance_17\n        PUSH, __Int32_9\n        PUSH, __Material_0\n       
-    EXTERN, \"UnityEngineMaterialArray.__Set__SystemInt32_UnityEngineMaterial__SystemVoid\"\n       
-    PUSH, ColorRenderers\n        PUSH, __instance_1A\n        COPY\n        PUSH,
-    ColorRenderers\n        PUSH, __instance_16\n        COPY\n        PUSH, __index_5\n       
-    PUSH, __Int32_B\n        COPY\n        PUSH, __instance_1A\n        PUSH, __Int32_B\n       
-    PUSH, __instance_19\n        EXTERN, \"UnityEngineMeshRendererArray.__Get__SystemInt32__UnityEngineMeshRenderer\"\n       
-    PUSH, ColorRendererArrayMap\n        PUSH, __value_4\n        COPY\n        PUSH,
-    __instance_19\n        PUSH, __value_4\n        EXTERN, \"UnityEngineMeshRenderer.__set_materials__UnityEngineMaterialArray__SystemVoid\"\n       
-    PUSH, __index_5\n        PUSH, __step_3\n        PUSH, __index_5\n        EXTERN,
-    \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\n       
-    JUMP, 0x00000800\n        JUMP, 0xFFFFFFFC\n    \n    .export onDisablePlatforms\n   
-    \n    onDisablePlatforms:\n    \n        PUSH, platforms\n        PUSH, __instance_1B\n       
-    COPY\n        PUSH, __instance_1B\n        PUSH, __end_4\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\n       
-    PUSH, __start_4\n        PUSH, __index_6\n        COPY\n        PUSH, __index_6\n       
-    PUSH, __end_4\n        PUSH, __condition_4\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __condition_4\n        JUMP_IF_FALSE, 0x00000AD8\n        PUSH, dataPlatformsInactive\n       
-    PUSH, __instance_1C\n        COPY\n        PUSH, platforms\n        PUSH, __instance_1B\n       
-    COPY\n        PUSH, __index_6\n        PUSH, __Int32_C\n        COPY\n       
-    PUSH, dataPlatformsColors\n        PUSH, __instance_1D\n        COPY\n       
-    PUSH, platforms\n        PUSH, __instance_1B\n        COPY\n        PUSH, __index_6\n       
-    PUSH, __Int32_F\n        COPY\n        PUSH, __instance_1D\n        PUSH, __Int32_F\n       
-    PUSH, __Int32_D\n        EXTERN, \"SystemInt32Array.__Get__SystemInt32__SystemInt32\"\n       
-    PUSH, __Int32_D\n        PUSH, dataCurrentColor\n        PUSH, __Boolean_2\n       
-    EXTERN, \"SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __Boolean_2\n        PUSH, __Boolean_1\n        EXTERN, \"SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean\"\n       
-    PUSH, __instance_1C\n        PUSH, __Int32_C\n        PUSH, __Boolean_1\n       
-    EXTERN, \"SystemBooleanArray.__Set__SystemInt32_SystemBoolean__SystemVoid\"\n       
-    PUSH, __index_6\n        PUSH, __step_4\n        PUSH, __index_6\n        EXTERN,
-    \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\n       
-    JUMP, 0x00000990\n        PUSH, __instance_1E\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__RequestSerialization__SystemVoid\"\n       
-    PUSH, __String_2\n        PUSH, __eventName_2\n        COPY\n        PUSH, __instance_1F\n       
-    PUSH, __eventName_2\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\n       
-    JUMP, 0xFFFFFFFC\n    \n    .export onResetRound\n    \n    onResetRound:\n   
-    \n        PUSH, platforms\n        PUSH, __instance_20\n        COPY\n       
-    PUSH, __instance_20\n        PUSH, __end_5\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\n       
-    PUSH, __start_5\n        PUSH, __index_7\n        COPY\n        PUSH, __index_7\n       
-    PUSH, __end_5\n        PUSH, __condition_5\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __condition_5\n        JUMP_IF_FALSE, 0x00000C80\n        PUSH, dataPlatformsColors\n       
-    PUSH, __instance_21\n        COPY\n        PUSH, __Int32_10\n        PUSH, __value_5\n       
-    COPY\n        PUSH, platforms\n        PUSH, __instance_20\n        COPY\n       
-    PUSH, __index_7\n        PUSH, __index_8\n        COPY\n        PUSH, __instance_21\n       
-    PUSH, __value_5\n        PUSH, __index_8\n        EXTERN, \"SystemInt32Array.__SetValue__SystemObject_SystemInt32__SystemVoid\"\n       
-    PUSH, dataPlatformsInactive\n        PUSH, __instance_22\n        COPY\n       
-    PUSH, platforms\n        PUSH, __instance_20\n        COPY\n        PUSH, __index_7\n       
-    PUSH, __Int32_11\n        COPY\n        PUSH, __instance_22\n        PUSH, __Int32_11\n       
-    PUSH, __Boolean_3\n        EXTERN, \"SystemBooleanArray.__Set__SystemInt32_SystemBoolean__SystemVoid\"\n       
-    PUSH, __index_7\n        PUSH, __step_5\n        PUSH, __index_7\n        EXTERN,
-    \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\n       
-    JUMP, 0x00000B5C\n        PUSH, __Int32_12\n        PUSH, dataCurrentColor\n       
-    COPY\n        PUSH, __instance_23\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__RequestSerialization__SystemVoid\"\n       
-    PUSH, __String_3\n        PUSH, __eventName_3\n        COPY\n        PUSH, __instance_24\n       
-    PUSH, __eventName_3\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\n       
-    JUMP, 0xFFFFFFFC\n    \n    .export _onPlayerJoined\n    \n    _onPlayerJoined:\n   
-    \n        PUSH, __instance_25\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__RequestSerialization__SystemVoid\"\n       
-    JUMP, 0xFFFFFFFC\n    \n    .export onGameStop\n    \n    onGameStop:\n    \n       
-    PUSH, platforms\n        PUSH, __instance_26\n        COPY\n        PUSH, __instance_26\n       
-    PUSH, __end_6\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\n       
-    PUSH, __start_6\n        PUSH, __index_9\n        COPY\n        PUSH, __index_9\n       
-    PUSH, __end_6\n        PUSH, __condition_6\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __condition_6\n        JUMP_IF_FALSE, 0x00000E68\n        PUSH, dataPlatformsColors\n       
-    PUSH, __instance_27\n        COPY\n        PUSH, __Int32_13\n        PUSH, __value_6\n       
-    COPY\n        PUSH, platforms\n        PUSH, __instance_26\n        COPY\n       
-    PUSH, __index_9\n        PUSH, __index_A\n        COPY\n        PUSH, __instance_27\n       
-    PUSH, __value_6\n        PUSH, __index_A\n        EXTERN, \"SystemInt32Array.__SetValue__SystemObject_SystemInt32__SystemVoid\"\n       
-    PUSH, dataPlatformsInactive\n        PUSH, __instance_28\n        COPY\n       
-    PUSH, platforms\n        PUSH, __instance_26\n        COPY\n        PUSH, __index_9\n       
-    PUSH, __Int32_14\n        COPY\n        PUSH, __Boolean_5\n        PUSH, __Boolean_4\n       
-    COPY\n        PUSH, __instance_28\n        PUSH, __Int32_14\n        PUSH, __Boolean_4\n       
-    EXTERN, \"SystemBooleanArray.__Set__SystemInt32_SystemBoolean__SystemVoid\"\n       
-    PUSH, __index_9\n        PUSH, __step_6\n        PUSH, __index_9\n        EXTERN,
-    \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\n       
-    JUMP, 0x00000D30\n        PUSH, __Int32_15\n        PUSH, dataCurrentColor\n       
-    COPY\n        PUSH, __instance_29\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__RequestSerialization__SystemVoid\"\n       
-    PUSH, __String_4\n        PUSH, __eventName_4\n        COPY\n        PUSH, __instance_2A\n       
-    PUSH, __eventName_4\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\n       
-    JUMP, 0xFFFFFFFC\n    \n    .export onGameStart\n    \n    onGameStart:\n   
-    \n        PUSH, platforms\n        PUSH, __instance_2B\n        COPY\n       
-    PUSH, __instance_2B\n        PUSH, __end_7\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\n       
-    PUSH, __start_7\n        PUSH, __index_B\n        COPY\n        PUSH, __index_B\n       
-    PUSH, __end_7\n        PUSH, __condition_7\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __condition_7\n        JUMP_IF_FALSE, 0x00001024\n        PUSH, dataPlatformsColors\n       
-    PUSH, __instance_2C\n        COPY\n        PUSH, __Int32_16\n        PUSH, __value_7\n       
-    COPY\n        PUSH, platforms\n        PUSH, __instance_2B\n        COPY\n       
-    PUSH, __index_B\n        PUSH, __index_C\n        COPY\n        PUSH, __instance_2C\n       
-    PUSH, __value_7\n        PUSH, __index_C\n        EXTERN, \"SystemInt32Array.__SetValue__SystemObject_SystemInt32__SystemVoid\"\n       
-    PUSH, dataPlatformsInactive\n        PUSH, __instance_2D\n        COPY\n       
-    PUSH, platforms\n        PUSH, __instance_2B\n        COPY\n        PUSH, __index_B\n       
-    PUSH, __Int32_17\n        COPY\n        PUSH, __instance_2D\n        PUSH, __Int32_17\n       
-    PUSH, __Boolean_6\n        EXTERN, \"SystemBooleanArray.__Set__SystemInt32_SystemBoolean__SystemVoid\"\n       
-    PUSH, __index_B\n        PUSH, __step_7\n        PUSH, __index_B\n        EXTERN,
-    \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\n       
-    JUMP, 0x00000F00\n        PUSH, __Int32_18\n        PUSH, dataCurrentColor\n       
-    COPY\n        PUSH, __instance_2E\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__RequestSerialization__SystemVoid\"\n       
-    PUSH, __String_5\n        PUSH, __eventName_5\n        COPY\n        PUSH, __instance_2F\n       
-    PUSH, __eventName_5\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\n       
-    JUMP, 0xFFFFFFFC\n    \n\n.code_end\n"
+  udonAssembly: ".data_start\r\n\r\n    .export PlatformContainer\r\n    .export
+    ColorMaterials\r\n    .export ColorRenderers\r\n    .export DisplayMaterials\r\n   
+    .export StartPoint\r\n    .export ColorRendererArrayMap\r\n    .sync dataCurrentColor,
+    none\r\n    .sync dataPlatformsColors, none\r\n    .sync dataPlatformsInactive,
+    none\r\n    .sync isGameRunning, none\r\n    \r\n    __Int32_0: %SystemInt32,
+    null\r\n    __Type_0: %SystemType, null\r\n    __Type_1: %SystemType, null\r\n   
+    __index_0: %SystemInt32, null\r\n    __condition_0: %SystemBoolean, null\r\n   
+    __instance_2: %UnityEngineGameObjectArray, null\r\n    __value_0: %SystemObject,
+    null\r\n    __index_1: %SystemInt32, null\r\n    __instance_3: %UnityEngineComponent,
+    null\r\n    __instance_4: %UnityEngineComponentArray, null\r\n    __Int32_1:
+    %SystemInt32, null\r\n    __Type_2: %SystemType, null\r\n    __Type_3: %SystemType,
+    null\r\n    __start_0: %SystemInt32, null\r\n    __end_0: %SystemInt32, null\r\n   
+    __step_0: %SystemInt32, null\r\n    __instance_0: %UnityEngineComponentArray,
+    null\r\n    __instance_1: %UnityEngineGameObject, this\r\n    __type_0: %SystemType,
+    null\r\n    __Type_4: %SystemType, null\r\n    __Int32_2: %SystemInt32, null\r\n   
+    __instance_5: %UnityEngineGameObjectArray, null\r\n    __Int32_3: %SystemInt32,
+    null\r\n    __instance_6: %UnityEngineGameObjectArray, null\r\n    __Int32_4:
+    %SystemInt32, null\r\n    __min_0: %SystemInt32, null\r\n    __max_0: %SystemInt32,
+    null\r\n    __instance_7: %UnityEngineMaterialArray, null\r\n    __index_2: %SystemInt32,
+    null\r\n    __condition_1: %SystemBoolean, null\r\n    __instance_9: %SystemInt32Array,
+    null\r\n    __value_1: %SystemObject, null\r\n    __index_3: %SystemInt32, null\r\n   
+    __min_1: %SystemInt32, null\r\n    __max_1: %SystemInt32, null\r\n    __instance_A:
+    %UnityEngineMaterialArray, null\r\n    __start_1: %SystemInt32, null\r\n    __end_1:
+    %SystemInt32, null\r\n    __step_1: %SystemInt32, null\r\n    __instance_8: %UnityEngineGameObjectArray,
+    null\r\n    __instance_B: %VRCUdonUdonBehaviour, this\r\n    __instance_C: %VRCUdonUdonBehaviour,
+    this\r\n    __eventName_0: %SystemString, null\r\n    __String_0: %SystemString,
+    null\r\n    __instance_D: %VRCUdonUdonBehaviour, this\r\n    __eventName_1: %SystemString,
+    null\r\n    __String_1: %SystemString, null\r\n    __index_4: %SystemInt32, null\r\n   
+    __condition_2: %SystemBoolean, null\r\n    __instance_F: %UnityEngineMeshRenderer,
+    null\r\n    __value_2: %UnityEngineMaterial, null\r\n    __instance_10: %UnityEngineGameObject,
+    this\r\n    __type_1: %SystemType, null\r\n    __Type_5: %SystemType, null\r\n   
+    __instance_12: %UnityEngineMaterialArray, null\r\n    __Int32_6: %SystemInt32,
+    null\r\n    __instance_13: %SystemInt32Array, null\r\n    __Int32_7: %SystemInt32,
+    null\r\n    __instance_14: %UnityEngineGameObject, this\r\n    __value_3: %SystemBoolean,
+    null\r\n    __instance_11: %UnityEngineGameObjectArray, null\r\n    __Int32_5:
+    %SystemInt32, null\r\n    __Boolean_0: %SystemBoolean, null\r\n    __instance_15:
+    %SystemBooleanArray, null\r\n    __Int32_8: %SystemInt32, null\r\n    __start_2:
+    %SystemInt32, null\r\n    __end_2: %SystemInt32, null\r\n    __step_2: %SystemInt32,
+    null\r\n    __instance_E: %UnityEngineGameObjectArray, null\r\n    __index_5:
+    %SystemInt32, null\r\n    __condition_3: %SystemBoolean, null\r\n    __instance_17:
+    %UnityEngineMaterialArray, null\r\n    __Int32_9: %SystemInt32, null\r\n    __Material_0:
+    %UnityEngineMaterial, null\r\n    __instance_18: %UnityEngineMaterialArray, null\r\n   
+    __Int32_A: %SystemInt32, null\r\n    __instance_19: %UnityEngineMeshRenderer,
+    null\r\n    __value_4: %UnityEngineMaterialArray, null\r\n    __instance_1A:
+    %UnityEngineMeshRendererArray, null\r\n    __Int32_B: %SystemInt32, null\r\n   
+    __start_3: %SystemInt32, null\r\n    __end_3: %SystemInt32, null\r\n    __step_3:
+    %SystemInt32, null\r\n    __instance_16: %UnityEngineMeshRendererArray, null\r\n   
+    __index_6: %SystemInt32, null\r\n    __condition_4: %SystemBoolean, null\r\n   
+    __instance_1C: %SystemBooleanArray, null\r\n    __Int32_C: %SystemInt32, null\r\n   
+    __Boolean_1: %SystemBoolean, null\r\n    __Boolean_2: %SystemBoolean, null\r\n   
+    __Int32_D: %SystemInt32, null\r\n    __Int32_E: %SystemInt32, null\r\n    __instance_1D:
+    %SystemInt32Array, null\r\n    __Int32_F: %SystemInt32, null\r\n    __start_4:
+    %SystemInt32, null\r\n    __end_4: %SystemInt32, null\r\n    __step_4: %SystemInt32,
+    null\r\n    __instance_1B: %UnityEngineGameObjectArray, null\r\n    __instance_1E:
+    %VRCUdonUdonBehaviour, this\r\n    __instance_1F: %VRCUdonUdonBehaviour, this\r\n   
+    __eventName_2: %SystemString, null\r\n    __String_2: %SystemString, null\r\n   
+    __index_7: %SystemInt32, null\r\n    __condition_5: %SystemBoolean, null\r\n   
+    __instance_21: %SystemInt32Array, null\r\n    __value_5: %SystemObject, null\r\n   
+    __index_8: %SystemInt32, null\r\n    __Int32_10: %SystemInt32, null\r\n    __instance_22:
+    %SystemBooleanArray, null\r\n    __Int32_11: %SystemInt32, null\r\n    __Boolean_3:
+    %SystemBoolean, null\r\n    __start_5: %SystemInt32, null\r\n    __end_5: %SystemInt32,
+    null\r\n    __step_5: %SystemInt32, null\r\n    __instance_20: %UnityEngineGameObjectArray,
+    null\r\n    __Int32_12: %SystemInt32, null\r\n    __instance_23: %VRCUdonUdonBehaviour,
+    this\r\n    __instance_24: %VRCUdonUdonBehaviour, this\r\n    __eventName_3:
+    %SystemString, null\r\n    __String_3: %SystemString, null\r\n    __instance_25:
+    %VRCUdonUdonBehaviour, this\r\n    __index_9: %SystemInt32, null\r\n    __condition_6:
+    %SystemBoolean, null\r\n    __instance_27: %SystemInt32Array, null\r\n    __value_6:
+    %SystemObject, null\r\n    __index_A: %SystemInt32, null\r\n    __Int32_13: %SystemInt32,
+    null\r\n    __instance_28: %SystemBooleanArray, null\r\n    __Int32_14: %SystemInt32,
+    null\r\n    __Boolean_4: %SystemBoolean, null\r\n    __start_6: %SystemInt32,
+    null\r\n    __end_6: %SystemInt32, null\r\n    __step_6: %SystemInt32, null\r\n   
+    __instance_26: %UnityEngineGameObjectArray, null\r\n    __Boolean_5: %SystemBoolean,
+    null\r\n    __Int32_15: %SystemInt32, null\r\n    __instance_29: %VRCUdonUdonBehaviour,
+    this\r\n    __instance_2A: %VRCUdonUdonBehaviour, this\r\n    __eventName_4:
+    %SystemString, null\r\n    __String_4: %SystemString, null\r\n    __index_B:
+    %SystemInt32, null\r\n    __condition_7: %SystemBoolean, null\r\n    __instance_2C:
+    %SystemInt32Array, null\r\n    __value_7: %SystemObject, null\r\n    __index_C:
+    %SystemInt32, null\r\n    __Int32_16: %SystemInt32, null\r\n    __instance_2D:
+    %SystemBooleanArray, null\r\n    __Int32_17: %SystemInt32, null\r\n    __Boolean_6:
+    %SystemBoolean, null\r\n    __start_7: %SystemInt32, null\r\n    __end_7: %SystemInt32,
+    null\r\n    __step_7: %SystemInt32, null\r\n    __instance_2B: %UnityEngineGameObjectArray,
+    null\r\n    __Int32_18: %SystemInt32, null\r\n    __instance_2E: %VRCUdonUdonBehaviour,
+    this\r\n    __instance_2F: %VRCUdonUdonBehaviour, this\r\n    __eventName_5:
+    %SystemString, null\r\n    __String_5: %SystemString, null\r\n    PlatformContainer:
+    %UnityEngineGameObject, this\r\n    platforms: %UnityEngineGameObjectArray, null\r\n   
+    ColorMaterials: %UnityEngineMaterialArray, null\r\n    dataCurrentColor: %SystemInt32,
+    null\r\n    dataPlatformsColors: %SystemInt32Array, null\r\n    dataPlatformsInactive:
+    %SystemBooleanArray, null\r\n    ColorRenderers: %UnityEngineMeshRendererArray,
+    null\r\n    DisplayMaterials: %UnityEngineMaterialArray, null\r\n    StartPoint:
+    %UnityEngineTransform, this\r\n    players: %VRCSDKBaseVRCPlayerApiArray, null\r\n   
+    isGameRunning: %SystemBoolean, null\r\n    ColorRendererArrayMap: %UnityEngineMaterialArray,
+    null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n    .export _start\r\n    \r\n   
+    _start:\r\n    \r\n        PUSH, PlatformContainer\r\n        PUSH, __instance_1\r\n       
+    COPY\r\n        PUSH, __Type_0\r\n        PUSH, __type_0\r\n        COPY\r\n       
+    PUSH, __instance_1\r\n        PUSH, __type_0\r\n        PUSH, __instance_0\r\n       
+    EXTERN, \"UnityEngineGameObject.__GetComponentsInChildren__SystemType__UnityEngineComponentArray\"\r\n       
+    PUSH, __instance_0\r\n        PUSH, __Int32_0\r\n        EXTERN, \"UnityEngineComponentArray.__get_Length__SystemInt32\"\r\n       
+    PUSH, __Int32_0\r\n        PUSH, platforms\r\n        EXTERN, \"UnityEngineGameObjectArray.__ctor__SystemInt32__UnityEngineGameObjectArray\"\r\n       
+    PUSH, PlatformContainer\r\n        PUSH, __instance_1\r\n        COPY\r\n       
+    PUSH, __Type_1\r\n        PUSH, __type_0\r\n        COPY\r\n        PUSH, __Int32_0\r\n       
+    PUSH, __end_0\r\n        COPY\r\n        PUSH, __start_0\r\n        PUSH, __index_0\r\n       
+    COPY\r\n        PUSH, __index_0\r\n        PUSH, __Int32_0\r\n        PUSH, __condition_0\r\n       
+    EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n       
+    PUSH, __condition_0\r\n        JUMP_IF_FALSE, 0x00000268\r\n        PUSH, platforms\r\n       
+    PUSH, __instance_2\r\n        COPY\r\n        PUSH, PlatformContainer\r\n       
+    PUSH, __instance_1\r\n        COPY\r\n        PUSH, __Type_2\r\n        PUSH,
+    __type_0\r\n        COPY\r\n        PUSH, __instance_0\r\n        PUSH, __instance_4\r\n       
+    COPY\r\n        PUSH, PlatformContainer\r\n        PUSH, __instance_1\r\n       
+    COPY\r\n        PUSH, __Type_3\r\n        PUSH, __type_0\r\n        COPY\r\n       
+    PUSH, __Int32_0\r\n        PUSH, __end_0\r\n        COPY\r\n        PUSH, __index_0\r\n       
+    PUSH, __Int32_1\r\n        COPY\r\n        PUSH, __instance_0\r\n        PUSH,
+    __Int32_1\r\n        PUSH, __instance_3\r\n        EXTERN, \"UnityEngineComponentArray.__Get__SystemInt32__UnityEngineComponent\"\r\n       
+    PUSH, __instance_3\r\n        PUSH, __value_0\r\n        EXTERN, \"UnityEngineComponent.__get_gameObject__UnityEngineGameObject\"\r\n       
+    PUSH, PlatformContainer\r\n        PUSH, __instance_1\r\n        COPY\r\n       
+    PUSH, __Type_4\r\n        PUSH, __type_0\r\n        COPY\r\n        PUSH, __Int32_0\r\n       
+    PUSH, __end_0\r\n        COPY\r\n        PUSH, __index_0\r\n        PUSH, __index_1\r\n       
+    COPY\r\n        PUSH, __instance_2\r\n        PUSH, __value_0\r\n        PUSH,
+    __index_1\r\n        EXTERN, \"UnityEngineGameObjectArray.__SetValue__SystemObject_SystemInt32__SystemVoid\"\r\n       
+    PUSH, __index_0\r\n        PUSH, __step_0\r\n        PUSH, __index_0\r\n       
+    EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n       
+    JUMP, 0x000000C8\r\n        PUSH, platforms\r\n        PUSH, __instance_5\r\n       
+    COPY\r\n        PUSH, __instance_5\r\n        PUSH, __Int32_2\r\n        EXTERN,
+    \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\r\n        PUSH, __Int32_2\r\n       
+    PUSH, dataPlatformsColors\r\n        EXTERN, \"SystemInt32Array.__ctor__SystemInt32__SystemInt32Array\"\r\n       
+    PUSH, platforms\r\n        PUSH, __instance_6\r\n        COPY\r\n        PUSH,
+    __instance_6\r\n        PUSH, __Int32_3\r\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\r\n       
+    PUSH, __Int32_3\r\n        PUSH, dataPlatformsInactive\r\n        EXTERN, \"SystemBooleanArray.__ctor__SystemInt32__SystemBooleanArray\"\r\n       
+    PUSH, __Int32_4\r\n        PUSH, players\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApiArray.__ctor__SystemInt32__VRCSDKBaseVRCPlayerApiArray\"\r\n       
+    JUMP, 0xFFFFFFFC\r\n    \r\n    .export onChangeColor\r\n    \r\n    onChangeColor:\r\n   
+    \r\n        PUSH, ColorMaterials\r\n        PUSH, __instance_7\r\n        COPY\r\n       
+    PUSH, __instance_7\r\n        PUSH, __max_0\r\n        EXTERN, \"UnityEngineMaterialArray.__get_Length__SystemInt32\"\r\n       
+    PUSH, __min_0\r\n        PUSH, __max_0\r\n        PUSH, dataCurrentColor\r\n       
+    EXTERN, \"UnityEngineRandom.__Range__SystemInt32_SystemInt32__SystemInt32\"\r\n       
+    PUSH, platforms\r\n        PUSH, __instance_8\r\n        COPY\r\n        PUSH,
+    __instance_8\r\n        PUSH, __end_1\r\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\r\n       
+    PUSH, __start_1\r\n        PUSH, __index_2\r\n        COPY\r\n        PUSH, __index_2\r\n       
+    PUSH, __end_1\r\n        PUSH, __condition_1\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n       
+    PUSH, __condition_1\r\n        JUMP_IF_FALSE, 0x0000049C\r\n        PUSH, dataPlatformsColors\r\n       
+    PUSH, __instance_9\r\n        COPY\r\n        PUSH, ColorMaterials\r\n       
+    PUSH, __instance_A\r\n        COPY\r\n        PUSH, __instance_A\r\n        PUSH,
+    __max_1\r\n        EXTERN, \"UnityEngineMaterialArray.__get_Length__SystemInt32\"\r\n       
+    PUSH, __min_1\r\n        PUSH, __max_1\r\n        PUSH, __value_1\r\n       
+    EXTERN, \"UnityEngineRandom.__Range__SystemInt32_SystemInt32__SystemInt32\"\r\n       
+    PUSH, platforms\r\n        PUSH, __instance_8\r\n        COPY\r\n        PUSH,
+    __index_2\r\n        PUSH, __index_3\r\n        COPY\r\n        PUSH, __instance_9\r\n       
+    PUSH, __value_1\r\n        PUSH, __index_3\r\n        EXTERN, \"SystemInt32Array.__SetValue__SystemObject_SystemInt32__SystemVoid\"\r\n       
+    PUSH, __index_2\r\n        PUSH, __step_1\r\n        PUSH, __index_2\r\n       
+    EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n       
+    JUMP, 0x0000039C\r\n        PUSH, __instance_B\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__RequestSerialization__SystemVoid\"\r\n       
+    PUSH, __String_0\r\n        PUSH, __eventName_0\r\n        COPY\r\n        PUSH,
+    __instance_C\r\n        PUSH, __eventName_0\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\r\n       
+    JUMP, 0xFFFFFFFC\r\n    \r\n    .export _onDeserialization\r\n    \r\n    _onDeserialization:\r\n   
+    \r\n        PUSH, __String_1\r\n        PUSH, __eventName_1\r\n        COPY\r\n       
+    PUSH, __instance_D\r\n        PUSH, __eventName_1\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\r\n       
+    JUMP, 0xFFFFFFFC\r\n    \r\n    .export updatePlatforms\r\n    \r\n    updatePlatforms:\r\n   
+    \r\n        PUSH, platforms\r\n        PUSH, __instance_E\r\n        COPY\r\n       
+    PUSH, __instance_E\r\n        PUSH, __end_2\r\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\r\n       
+    PUSH, __start_2\r\n        PUSH, __index_4\r\n        COPY\r\n        PUSH, __index_4\r\n       
+    PUSH, __end_2\r\n        PUSH, __condition_2\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n       
+    PUSH, __condition_2\r\n        JUMP_IF_FALSE, 0x000007C0\r\n        PUSH, platforms\r\n       
+    PUSH, __instance_11\r\n        COPY\r\n        PUSH, platforms\r\n        PUSH,
+    __instance_E\r\n        COPY\r\n        PUSH, __index_4\r\n        PUSH, __Int32_5\r\n       
+    COPY\r\n        PUSH, __instance_11\r\n        PUSH, __Int32_5\r\n        PUSH,
+    __instance_10\r\n        EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n       
+    PUSH, __Type_5\r\n        PUSH, __type_1\r\n        COPY\r\n        PUSH, __instance_10\r\n       
+    PUSH, __type_1\r\n        PUSH, __instance_F\r\n        EXTERN, \"UnityEngineGameObject.__GetComponent__SystemType__UnityEngineComponent\"\r\n       
+    PUSH, ColorMaterials\r\n        PUSH, __instance_12\r\n        COPY\r\n       
+    PUSH, dataPlatformsColors\r\n        PUSH, __instance_13\r\n        COPY\r\n       
+    PUSH, platforms\r\n        PUSH, __instance_E\r\n        COPY\r\n        PUSH,
+    __index_4\r\n        PUSH, __Int32_7\r\n        COPY\r\n        PUSH, __instance_13\r\n       
+    PUSH, __Int32_7\r\n        PUSH, __Int32_6\r\n        EXTERN, \"SystemInt32Array.__Get__SystemInt32__SystemInt32\"\r\n       
+    PUSH, __instance_12\r\n        PUSH, __Int32_6\r\n        PUSH, __value_2\r\n       
+    EXTERN, \"UnityEngineMaterialArray.__Get__SystemInt32__UnityEngineMaterial\"\r\n       
+    PUSH, __instance_F\r\n        PUSH, __value_2\r\n        EXTERN, \"UnityEngineMeshRenderer.__set_material__UnityEngineMaterial__SystemVoid\"\r\n       
+    PUSH, platforms\r\n        PUSH, __instance_11\r\n        COPY\r\n        PUSH,
+    platforms\r\n        PUSH, __instance_E\r\n        COPY\r\n        PUSH, __index_4\r\n       
+    PUSH, __Int32_5\r\n        COPY\r\n        PUSH, __instance_10\r\n        PUSH,
+    __instance_14\r\n        COPY\r\n        PUSH, dataPlatformsInactive\r\n       
+    PUSH, __instance_15\r\n        COPY\r\n        PUSH, platforms\r\n        PUSH,
+    __instance_E\r\n        COPY\r\n        PUSH, __index_4\r\n        PUSH, __Int32_8\r\n       
+    COPY\r\n        PUSH, __instance_15\r\n        PUSH, __Int32_8\r\n        PUSH,
+    __Boolean_0\r\n        EXTERN, \"SystemBooleanArray.__Get__SystemInt32__SystemBoolean\"\r\n       
+    PUSH, __Boolean_0\r\n        PUSH, __value_3\r\n        EXTERN, \"SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean\"\r\n       
+    PUSH, __instance_10\r\n        PUSH, __value_3\r\n        EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n       
+    PUSH, __index_4\r\n        PUSH, __step_2\r\n        PUSH, __index_4\r\n       
+    EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n       
+    JUMP, 0x00000554\r\n        PUSH, ColorRenderers\r\n        PUSH, __instance_16\r\n       
+    COPY\r\n        PUSH, __instance_16\r\n        PUSH, __end_3\r\n        EXTERN,
+    \"UnityEngineMeshRendererArray.__get_Length__SystemInt32\"\r\n        PUSH, __start_3\r\n       
+    PUSH, __index_5\r\n        COPY\r\n        PUSH, __index_5\r\n        PUSH, __end_3\r\n       
+    PUSH, __condition_3\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n       
+    PUSH, __condition_3\r\n        JUMP_IF_FALSE, 0x00000948\r\n        PUSH, ColorRendererArrayMap\r\n       
+    PUSH, __instance_17\r\n        COPY\r\n        PUSH, DisplayMaterials\r\n       
+    PUSH, __instance_18\r\n        COPY\r\n        PUSH, __instance_18\r\n       
+    PUSH, dataCurrentColor\r\n        PUSH, __Material_0\r\n        EXTERN, \"UnityEngineMaterialArray.__Get__SystemInt32__UnityEngineMaterial\"\r\n       
+    PUSH, __instance_17\r\n        PUSH, __Int32_9\r\n        PUSH, __Material_0\r\n       
+    EXTERN, \"UnityEngineMaterialArray.__Set__SystemInt32_UnityEngineMaterial__SystemVoid\"\r\n       
+    PUSH, ColorRenderers\r\n        PUSH, __instance_1A\r\n        COPY\r\n       
+    PUSH, ColorRenderers\r\n        PUSH, __instance_16\r\n        COPY\r\n       
+    PUSH, __index_5\r\n        PUSH, __Int32_B\r\n        COPY\r\n        PUSH, __instance_1A\r\n       
+    PUSH, __Int32_B\r\n        PUSH, __instance_19\r\n        EXTERN, \"UnityEngineMeshRendererArray.__Get__SystemInt32__UnityEngineMeshRenderer\"\r\n       
+    PUSH, ColorRendererArrayMap\r\n        PUSH, __value_4\r\n        COPY\r\n       
+    PUSH, __instance_19\r\n        PUSH, __value_4\r\n        EXTERN, \"UnityEngineMeshRenderer.__set_materials__UnityEngineMaterialArray__SystemVoid\"\r\n       
+    PUSH, __index_5\r\n        PUSH, __step_3\r\n        PUSH, __index_5\r\n       
+    EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n       
+    JUMP, 0x00000800\r\n        JUMP, 0xFFFFFFFC\r\n    \r\n    .export onDisablePlatforms\r\n   
+    \r\n    onDisablePlatforms:\r\n    \r\n        PUSH, platforms\r\n        PUSH,
+    __instance_1B\r\n        COPY\r\n        PUSH, __instance_1B\r\n        PUSH,
+    __end_4\r\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\r\n       
+    PUSH, __start_4\r\n        PUSH, __index_6\r\n        COPY\r\n        PUSH, __index_6\r\n       
+    PUSH, __end_4\r\n        PUSH, __condition_4\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n       
+    PUSH, __condition_4\r\n        JUMP_IF_FALSE, 0x00000AD8\r\n        PUSH, dataPlatformsInactive\r\n       
+    PUSH, __instance_1C\r\n        COPY\r\n        PUSH, platforms\r\n        PUSH,
+    __instance_1B\r\n        COPY\r\n        PUSH, __index_6\r\n        PUSH, __Int32_C\r\n       
+    COPY\r\n        PUSH, dataPlatformsColors\r\n        PUSH, __instance_1D\r\n       
+    COPY\r\n        PUSH, platforms\r\n        PUSH, __instance_1B\r\n        COPY\r\n       
+    PUSH, __index_6\r\n        PUSH, __Int32_F\r\n        COPY\r\n        PUSH, __instance_1D\r\n       
+    PUSH, __Int32_F\r\n        PUSH, __Int32_D\r\n        EXTERN, \"SystemInt32Array.__Get__SystemInt32__SystemInt32\"\r\n       
+    PUSH, __Int32_D\r\n        PUSH, dataCurrentColor\r\n        PUSH, __Boolean_2\r\n       
+    EXTERN, \"SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean\"\r\n       
+    PUSH, __Boolean_2\r\n        PUSH, __Boolean_1\r\n        EXTERN, \"SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean\"\r\n       
+    PUSH, __instance_1C\r\n        PUSH, __Int32_C\r\n        PUSH, __Boolean_1\r\n       
+    EXTERN, \"SystemBooleanArray.__Set__SystemInt32_SystemBoolean__SystemVoid\"\r\n       
+    PUSH, __index_6\r\n        PUSH, __step_4\r\n        PUSH, __index_6\r\n       
+    EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n       
+    JUMP, 0x00000990\r\n        PUSH, __instance_1E\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__RequestSerialization__SystemVoid\"\r\n       
+    PUSH, __String_2\r\n        PUSH, __eventName_2\r\n        COPY\r\n        PUSH,
+    __instance_1F\r\n        PUSH, __eventName_2\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\r\n       
+    JUMP, 0xFFFFFFFC\r\n    \r\n    .export onResetRound\r\n    \r\n    onResetRound:\r\n   
+    \r\n        PUSH, platforms\r\n        PUSH, __instance_20\r\n        COPY\r\n       
+    PUSH, __instance_20\r\n        PUSH, __end_5\r\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\r\n       
+    PUSH, __start_5\r\n        PUSH, __index_7\r\n        COPY\r\n        PUSH, __index_7\r\n       
+    PUSH, __end_5\r\n        PUSH, __condition_5\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n       
+    PUSH, __condition_5\r\n        JUMP_IF_FALSE, 0x00000C80\r\n        PUSH, dataPlatformsColors\r\n       
+    PUSH, __instance_21\r\n        COPY\r\n        PUSH, __Int32_10\r\n        PUSH,
+    __value_5\r\n        COPY\r\n        PUSH, platforms\r\n        PUSH, __instance_20\r\n       
+    COPY\r\n        PUSH, __index_7\r\n        PUSH, __index_8\r\n        COPY\r\n       
+    PUSH, __instance_21\r\n        PUSH, __value_5\r\n        PUSH, __index_8\r\n       
+    EXTERN, \"SystemInt32Array.__SetValue__SystemObject_SystemInt32__SystemVoid\"\r\n       
+    PUSH, dataPlatformsInactive\r\n        PUSH, __instance_22\r\n        COPY\r\n       
+    PUSH, platforms\r\n        PUSH, __instance_20\r\n        COPY\r\n        PUSH,
+    __index_7\r\n        PUSH, __Int32_11\r\n        COPY\r\n        PUSH, __instance_22\r\n       
+    PUSH, __Int32_11\r\n        PUSH, __Boolean_3\r\n        EXTERN, \"SystemBooleanArray.__Set__SystemInt32_SystemBoolean__SystemVoid\"\r\n       
+    PUSH, __index_7\r\n        PUSH, __step_5\r\n        PUSH, __index_7\r\n       
+    EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n       
+    JUMP, 0x00000B5C\r\n        PUSH, __Int32_12\r\n        PUSH, dataCurrentColor\r\n       
+    COPY\r\n        PUSH, __instance_23\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__RequestSerialization__SystemVoid\"\r\n       
+    PUSH, __String_3\r\n        PUSH, __eventName_3\r\n        COPY\r\n        PUSH,
+    __instance_24\r\n        PUSH, __eventName_3\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\r\n       
+    JUMP, 0xFFFFFFFC\r\n    \r\n    .export _onPlayerJoined\r\n    \r\n    _onPlayerJoined:\r\n   
+    \r\n        PUSH, __instance_25\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__RequestSerialization__SystemVoid\"\r\n       
+    JUMP, 0xFFFFFFFC\r\n    \r\n    .export onGameStop\r\n    \r\n    onGameStop:\r\n   
+    \r\n        PUSH, platforms\r\n        PUSH, __instance_26\r\n        COPY\r\n       
+    PUSH, __instance_26\r\n        PUSH, __end_6\r\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\r\n       
+    PUSH, __start_6\r\n        PUSH, __index_9\r\n        COPY\r\n        PUSH, __index_9\r\n       
+    PUSH, __end_6\r\n        PUSH, __condition_6\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n       
+    PUSH, __condition_6\r\n        JUMP_IF_FALSE, 0x00000E68\r\n        PUSH, dataPlatformsColors\r\n       
+    PUSH, __instance_27\r\n        COPY\r\n        PUSH, __Int32_13\r\n        PUSH,
+    __value_6\r\n        COPY\r\n        PUSH, platforms\r\n        PUSH, __instance_26\r\n       
+    COPY\r\n        PUSH, __index_9\r\n        PUSH, __index_A\r\n        COPY\r\n       
+    PUSH, __instance_27\r\n        PUSH, __value_6\r\n        PUSH, __index_A\r\n       
+    EXTERN, \"SystemInt32Array.__SetValue__SystemObject_SystemInt32__SystemVoid\"\r\n       
+    PUSH, dataPlatformsInactive\r\n        PUSH, __instance_28\r\n        COPY\r\n       
+    PUSH, platforms\r\n        PUSH, __instance_26\r\n        COPY\r\n        PUSH,
+    __index_9\r\n        PUSH, __Int32_14\r\n        COPY\r\n        PUSH, __Boolean_5\r\n       
+    PUSH, __Boolean_4\r\n        COPY\r\n        PUSH, __instance_28\r\n        PUSH,
+    __Int32_14\r\n        PUSH, __Boolean_4\r\n        EXTERN, \"SystemBooleanArray.__Set__SystemInt32_SystemBoolean__SystemVoid\"\r\n       
+    PUSH, __index_9\r\n        PUSH, __step_6\r\n        PUSH, __index_9\r\n       
+    EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n       
+    JUMP, 0x00000D30\r\n        PUSH, __Int32_15\r\n        PUSH, dataCurrentColor\r\n       
+    COPY\r\n        PUSH, __instance_29\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__RequestSerialization__SystemVoid\"\r\n       
+    PUSH, __String_4\r\n        PUSH, __eventName_4\r\n        COPY\r\n        PUSH,
+    __instance_2A\r\n        PUSH, __eventName_4\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\r\n       
+    JUMP, 0xFFFFFFFC\r\n    \r\n    .export onGameStart\r\n    \r\n    onGameStart:\r\n   
+    \r\n        PUSH, platforms\r\n        PUSH, __instance_2B\r\n        COPY\r\n       
+    PUSH, __instance_2B\r\n        PUSH, __end_7\r\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\r\n       
+    PUSH, __start_7\r\n        PUSH, __index_B\r\n        COPY\r\n        PUSH, __index_B\r\n       
+    PUSH, __end_7\r\n        PUSH, __condition_7\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n       
+    PUSH, __condition_7\r\n        JUMP_IF_FALSE, 0x00001024\r\n        PUSH, dataPlatformsColors\r\n       
+    PUSH, __instance_2C\r\n        COPY\r\n        PUSH, __Int32_16\r\n        PUSH,
+    __value_7\r\n        COPY\r\n        PUSH, platforms\r\n        PUSH, __instance_2B\r\n       
+    COPY\r\n        PUSH, __index_B\r\n        PUSH, __index_C\r\n        COPY\r\n       
+    PUSH, __instance_2C\r\n        PUSH, __value_7\r\n        PUSH, __index_C\r\n       
+    EXTERN, \"SystemInt32Array.__SetValue__SystemObject_SystemInt32__SystemVoid\"\r\n       
+    PUSH, dataPlatformsInactive\r\n        PUSH, __instance_2D\r\n        COPY\r\n       
+    PUSH, platforms\r\n        PUSH, __instance_2B\r\n        COPY\r\n        PUSH,
+    __index_B\r\n        PUSH, __Int32_17\r\n        COPY\r\n        PUSH, __instance_2D\r\n       
+    PUSH, __Int32_17\r\n        PUSH, __Boolean_6\r\n        EXTERN, \"SystemBooleanArray.__Set__SystemInt32_SystemBoolean__SystemVoid\"\r\n       
+    PUSH, __index_B\r\n        PUSH, __step_7\r\n        PUSH, __index_B\r\n       
+    EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n       
+    JUMP, 0x00000F00\r\n        PUSH, __Int32_18\r\n        PUSH, dataCurrentColor\r\n       
+    COPY\r\n        PUSH, __instance_2E\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__RequestSerialization__SystemVoid\"\r\n       
+    PUSH, __String_5\r\n        PUSH, __eventName_5\r\n        COPY\r\n        PUSH,
+    __instance_2F\r\n        PUSH, __eventName_5\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\r\n       
+    JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
   assemblyError: 
   graphData:
     name: 

@@ -1,28 +1,37 @@
 using UdonSharp;
 using UnityEngine;
+using VRC.SDKBase;
 
 public class ColorDisplayManager : UdonSharpBehaviour
 {
-    [UdonSynced] public int CurrentColorIndex;
+    [UdonSynced] [HideInInspector] public int currentColorIndex = 0;
     [SerializeField] private MeshRenderer[] colorRenderers;
     [SerializeField] private Material[] displayColors;
-    [SerializeField] private int colorRendererIndex = 1;
+    [SerializeField] private Material sandstoneMaterial;
 
-    public override void OnPreSerialization()
+    public void Start()
     {
-        OnUpdateCurrentColorDisplays();
+        currentColorIndex = 0;
     }
 
     public override void OnDeserialization()
     {
         OnUpdateCurrentColorDisplays();
     }
-
-    private void OnUpdateCurrentColorDisplays()
+    
+    public void SyncState()
     {
-        foreach (var colorRenderer in colorRenderers)
+        if (!Networking.IsOwner(Networking.LocalPlayer, gameObject)) return;
+        
+        RequestSerialization();
+        OnUpdateCurrentColorDisplays();
+    }
+
+    public void OnUpdateCurrentColorDisplays()
+    {
+        for (var i = 0; i < colorRenderers.Length; i++)
         {
-            colorRenderer.materials[colorRendererIndex] = displayColors[CurrentColorIndex];
+            colorRenderers[i].materials = new[] {sandstoneMaterial, displayColors[currentColorIndex]};
         }
     }
 }
