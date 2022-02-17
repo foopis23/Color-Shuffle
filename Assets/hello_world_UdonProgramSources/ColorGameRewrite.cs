@@ -21,8 +21,8 @@ public class ColorGameRewrite : UdonSharpBehaviour
     [SerializeField] private PlatformManager platformManager;
     [SerializeField] private ColorDisplayManager colorDisplayManager;
     [SerializeField] private LastGameCanvasController lastGameCanvasController;
-    [SerializeField] private NetworkManager networkManager;
     [SerializeField] private TimerController timerController;
+    [SerializeField] private RandomSync randomSync;
 
     // State Variables
     [UdonSynced] private int _roundCount;
@@ -32,66 +32,55 @@ public class ColorGameRewrite : UdonSharpBehaviour
 
     public void OnGameStart()
     {
-        // block if not owner
-        if (!Networking.IsOwner(Networking.LocalPlayer, gameObject)) return;
-        
         // block if game is already running
         if (_isPlaying) return;
-        
+
         Debug.Log("Starting Game");
         
         // set initial game state
         _isPlaying = true;
         _roundCount = 0;
-        RequestSerialization();
-        
+
         // setup player list
-        SendCustomNetworkEvent(NetworkEventTarget.All, "SetAllPlayersAlive");
+        SetAllPlayersAlive();
 
         // teleport all players to start
-        SendCustomNetworkEvent(NetworkEventTarget.All, "TeleportAllPlayersToStart");
-        
-        // Start Round
-        OnRoundStart();
+        Networking.LocalPlayer.TeleportTo(startPoint.position, startPoint.rotation);
+
+        if (Networking.IsOwner(gameObject))
+        {
+            randomSync.index = Random.Range(0, randomSync.randomNumbers.Length);
+            randomSync.RequestSerialization();
+            SendCustomEventDelayedSeconds("OnRoundStartOwner", secondsBetweenRounds);
+        }
     }
 
-    public void OnGameEnd()
+    public void OnRoundStartOwner()
     {
-        // block if not owner
-        if (!Networking.IsOwner(Networking.LocalPlayer, gameObject)) return;
-        
-        Debug.Log("Ending Game");
-        
-        // reset game state to not playing
-        _isPlaying = false;
-        _roundCount = 0;
-
-        RequestSerialization();
+        if (Networking.IsOwner(gameObject))
+            SendCustomNetworkEvent(NetworkEventTarget.All, "OnRoundStart");
     }
 
     public void OnRoundStart()
     {
-        // block if not owner
-        if (!Networking.IsOwner(Networking.LocalPlayer, gameObject)) return;
-        
         Debug.Log("Starting Round");
         
         // increase the round cound
         _roundCount++;
         
         // selected the the current color
-        _dataCurrentColor = Random.Range(1, colorCount);
+        _dataCurrentColor = randomSync.randomNumbers[randomSync.index];
+        randomSync.index++;
+        randomSync.index %=  randomSync.randomNumbers.Length;
+        
         colorDisplayManager.currentColorIndex = _dataCurrentColor;
         platformManager.currentColorIndex = _dataCurrentColor;
+
+        colorDisplayManager.OnUpdateCurrentColorDisplays();
 
         // randomize the floor colors
         platformManager.RandomizeFloorColor();
 
-        // sync the game state
-        RequestSerialization();
-        colorDisplayManager.SyncState();
-        platformManager.SyncState();
-        
         // wait to hide floor
         var waitTillHideFloor = Mathf.Ceil(
             Mathf.Clamp(
@@ -101,30 +90,36 @@ public class ColorGameRewrite : UdonSharpBehaviour
                 ));
         timerController.timerMax = waitTillHideFloor;
         timerController.timerStart = Time.time;
-        timerController.RequestSerialization();
-        SendCustomEventDelayedSeconds("OnRoundFloorHide", waitTillHideFloor);
+
+        if (Networking.IsOwner(gameObject))
+            SendCustomEventDelayedSeconds("OnRoundFloorHideOwner", waitTillHideFloor);
     }
 
+    public void OnRoundFloorHideOwner()
+    {
+        if (Networking.IsOwner(gameObject))
+            SendCustomNetworkEvent(NetworkEventTarget.All, "OnRoundFloorHide");
+    }
+    
     public void OnRoundFloorHide()
     {
-        // block if not owner
-        if (!Networking.IsOwner(Networking.LocalPlayer, gameObject)) return;
-        
         Debug.Log("Hiding Floor");
         
         // set platforms to enabled or not
         platformManager.HideTilesByColor();
-        platformManager.SyncState();
-
+        
         // wait to finish round
-        SendCustomEventDelayedSeconds("OnRoundFinished", secondsBetweenRoundEnd);
+        if (Networking.IsOwner(gameObject))
+            SendCustomEventDelayedSeconds("OnRoundFinishedOwner", secondsBetweenRoundEnd);
+    }
+
+    public void OnRoundFinishedOwner()
+    {
+        SendCustomNetworkEvent(NetworkEventTarget.All, "OnRoundFinished");
     }
 
     public void OnRoundFinished()
     {
-        // block if not owner
-        if (!Networking.IsOwner(Networking.LocalPlayer, gameObject)) return;
-        
         Debug.Log("Round Finished");
         
         // reset selected color
@@ -132,15 +127,12 @@ public class ColorGameRewrite : UdonSharpBehaviour
         colorDisplayManager.currentColorIndex = _dataCurrentColor;
         platformManager.currentColorIndex = _dataCurrentColor;
         
+        colorDisplayManager.OnUpdateCurrentColorDisplays();
+        
         // reset platforms to intial state
         platformManager.ResetToInitialState();
         
-        // sync game state
-        colorDisplayManager.SyncState();
-        platformManager.SyncState();
-        RequestSerialization();
-        
-        SendCustomNetworkEvent(NetworkEventTarget.All, "TeleportPlayerToSpawnIfDead");
+        TeleportPlayerToSpawnIfDead();
 
         // find how many players are left
         var aliveCount = 0;
@@ -159,39 +151,34 @@ public class ColorGameRewrite : UdonSharpBehaviour
             // TIE Game
             lastGameCanvasController.rounds = _roundCount.ToString();
             lastGameCanvasController.winner = "Tie";
-            lastGameCanvasController.SyncState();
+            lastGameCanvasController.UpdateDisplayText();
             OnGameEnd();
         } else if (aliveCount == 1) {
             // WINNER
             lastGameCanvasController.rounds = _roundCount.ToString();
             lastGameCanvasController.winner = winner.displayName;
-            lastGameCanvasController.SyncState();
+            lastGameCanvasController.UpdateDisplayText();
+            winner.TeleportTo(respawnPoint.position, respawnPoint.rotation);
 
-            for (var i = 0; i < networkManager.playerIds.Length; i++)
-            {
-                if (networkManager.playerIds[i] == winner.playerId)
-                {
-                    networkManager.clients[i].SendCustomNetworkEvent(NetworkEventTarget.Owner, "TeleportPlayerToSpawn");
-                }
-            }
-            
             OnGameEnd();
-        } else {
-            SendCustomEventDelayedSeconds("OnRoundStart", secondsBetweenRounds);
+        } else
+        {
+            if (!Networking.IsOwner(gameObject)) return;
+            randomSync.RequestSerialization();
+            SendCustomEventDelayedSeconds("OnRoundStartOwner", secondsBetweenRounds);
         }
     }
-
-    public void TeleportAllPlayersToStart()
+    
+    public void OnGameEnd()
     {
-        Networking.LocalPlayer.TeleportTo(startPoint.position, startPoint.rotation);
+        Debug.Log("Ending Game");
+        
+        // reset game state to not playing
+        _isPlaying = false;
+        _roundCount = 0;
     }
 
-    public void TeleportAllPlayersToSpawn()
-    {
-        Networking.LocalPlayer.TeleportTo(respawnPoint.position, respawnPoint.rotation);
-    }
-
-    public void SetAllPlayersAlive()
+    private void SetAllPlayersAlive()
     {
         // setup player list
         _players = new VRCPlayerApi[16];
@@ -203,7 +190,7 @@ public class ColorGameRewrite : UdonSharpBehaviour
         }
     }
 
-    public void TeleportPlayerToSpawnIfDead()
+    private void TeleportPlayerToSpawnIfDead()
     {
         for (var i = 0; i < _players.Length; i++)
         {
@@ -223,8 +210,7 @@ public class ColorGameRewrite : UdonSharpBehaviour
 
     public override void OnPlayerJoined(VRCPlayerApi player)
     {
-        platformManager.SyncState();
-        colorDisplayManager.SyncState();
+        if (!Networking.IsOwner(gameObject)) return;
         RequestSerialization();
     }
 }

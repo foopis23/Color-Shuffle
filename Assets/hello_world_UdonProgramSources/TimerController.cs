@@ -12,8 +12,8 @@ public class TimerController : UdonSharpBehaviour
     [SerializeField] private Color endColor;
     [SerializeField] private Text[] text;
     
-    [HideInInspector][UdonSynced] public float timerMax;
-    [HideInInspector][UdonSynced] public float timerStart;
+    [HideInInspector] public float timerMax;
+    [HideInInspector] public float timerStart;
 
     void Update()
     {

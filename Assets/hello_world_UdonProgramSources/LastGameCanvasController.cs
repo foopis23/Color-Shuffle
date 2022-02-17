@@ -1,6 +1,7 @@
 ﻿using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
+using VRC.SDKBase;
 
 public class LastGameCanvasController : UdonSharpBehaviour
 {
@@ -10,20 +11,15 @@ public class LastGameCanvasController : UdonSharpBehaviour
     [HideInInspector][UdonSynced] public string winner;
     [HideInInspector][UdonSynced] public string rounds;
 
-    public override void OnDeserialization()
-    {
-        UpdateDisplayText();
-    }
-    
-    public void SyncState()
-    {
-        RequestSerialization();
-        UpdateDisplayText();
-    }
-
-    private void UpdateDisplayText()
+    public void UpdateDisplayText()
     {
         winnerText.text = $"Winner: {winner}";
         roundsSurvivedText.text = $"Rounds Survived: {rounds}";
+    }
+
+    public override void OnPlayerJoined(VRCPlayerApi player)
+    {
+        if (Networking.IsOwner(gameObject))
+            RequestSerialization();
     }
 }
