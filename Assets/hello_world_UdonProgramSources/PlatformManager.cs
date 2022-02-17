@@ -8,9 +8,10 @@ public class PlatformManager : UdonSharpBehaviour
     public Material[] colorMaterials;
 
     private MeshRenderer[] _platforms;
-    [UdonSynced] private int[] _dataPlatformsColors;
-    [UdonSynced] private bool[] _dataPlatformInactive;
-    [UdonSynced][HideInInspector] public int currentColorIndex = 0;
+    private int[] _dataPlatformsColors;
+    private bool[] _dataPlatformInactive;
+    [HideInInspector] public int currentColorIndex = 0;
+    [SerializeField] private RandomSync randomSync;
 
     private void Start()
     {
@@ -24,8 +25,6 @@ public class PlatformManager : UdonSharpBehaviour
 
     public void ResetToInitialState()
     {
-        if (!Networking.IsOwner(Networking.LocalPlayer, gameObject)) return;
-        
         for (var i = 0; i < _platforms.Length; i++)
         {
             _dataPlatformInactive[i] = false;
@@ -37,11 +36,11 @@ public class PlatformManager : UdonSharpBehaviour
 
     public void RandomizeFloorColor()
     {
-        if (!Networking.IsOwner(Networking.LocalPlayer, gameObject)) return;
-        
         for (var i = 0; i < _dataPlatformsColors.Length; i++)
         {
-            _dataPlatformsColors[i] = Random.Range(1, colorMaterials.Length);
+            _dataPlatformsColors[i] = randomSync.randomNumbers[randomSync.index];
+            randomSync.index++;
+            randomSync.index %= randomSync.randomNumbers.Length;
         }
         
         OnFloorStateUpdate();
@@ -49,8 +48,6 @@ public class PlatformManager : UdonSharpBehaviour
 
     public void HideTilesByColor()
     {
-        if (!Networking.IsOwner(Networking.LocalPlayer, gameObject)) return;
-        
         for (var i = 0; i < _platforms.Length; i++)
         {
             _dataPlatformInactive[i] = _dataPlatformsColors[i] != currentColorIndex;
@@ -58,20 +55,7 @@ public class PlatformManager : UdonSharpBehaviour
         
         OnFloorStateUpdate();
     }
-
-    public override void OnDeserialization()
-    {
-        OnFloorStateUpdate();
-    }
-
-    public void SyncState()
-    {
-        if (!Networking.IsOwner(Networking.LocalPlayer, gameObject)) return;
-        
-        RequestSerialization();
-        OnFloorStateUpdate();
-    }
-
+    
     private void OnFloorStateUpdate()
     {
         for (var i = 0; i < _platforms.Length; i++)
