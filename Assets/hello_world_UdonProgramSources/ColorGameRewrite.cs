@@ -46,14 +46,8 @@ public class ColorGameRewrite : UdonSharpBehaviour
         RequestSerialization();
         
         // setup player list
-        _players = new VRCPlayerApi[16];
-        VRCPlayerApi.GetPlayers(_players);
-        foreach (var player in _players)
-        {
-            if (player == null) continue;
-            player.SetPlayerTag("alive", "true");
-        }
-        
+        SendCustomNetworkEvent(NetworkEventTarget.All, "SetAllPlayersAlive");
+
         // teleport all players to start
         SendCustomNetworkEvent(NetworkEventTarget.All, "TeleportAllPlayersToStart");
         
@@ -145,6 +139,8 @@ public class ColorGameRewrite : UdonSharpBehaviour
         colorDisplayManager.SyncState();
         platformManager.SyncState();
         RequestSerialization();
+        
+        SendCustomNetworkEvent(NetworkEventTarget.All, "TeleportPlayerToSpawnIfDead");
 
         // find how many players are left
         var aliveCount = 0;
@@ -194,7 +190,37 @@ public class ColorGameRewrite : UdonSharpBehaviour
     {
         Networking.LocalPlayer.TeleportTo(respawnPoint.position, respawnPoint.rotation);
     }
-    
+
+    public void SetAllPlayersAlive()
+    {
+        // setup player list
+        _players = new VRCPlayerApi[16];
+        VRCPlayerApi.GetPlayers(_players);
+        foreach (var player in _players)
+        {
+            if (player == null) continue;
+            player.SetPlayerTag("alive", "true");
+        }
+    }
+
+    public void TeleportPlayerToSpawnIfDead()
+    {
+        for (var i = 0; i < _players.Length; i++)
+        {
+            var player = _players[i];
+            if (player == null || player.GetPlayerTag("alive") == "true") continue;
+
+            _players[i] = null;
+            
+            if (player.isLocal)
+            {
+                Debug.Log(player.playerId);
+                Debug.Log(player.GetPlayerTag("alive"));
+                player.TeleportTo(respawnPoint.position, respawnPoint.rotation);
+            }
+        }
+    }
+
     public override void OnPlayerJoined(VRCPlayerApi player)
     {
         platformManager.SyncState();
