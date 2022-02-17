@@ -8,10 +8,7 @@ public class DeathFloorController : UdonSharpBehaviour
 
     public override void OnPlayerTriggerEnter(VRCPlayerApi player)
     {
-        player.TeleportTo(respawnPoint.position, respawnPoint.rotation);
-        
-        if (!Networking.IsOwner(Networking.LocalPlayer, gameObject)) return;
-        Debug.Log("tragic character death");
+        Debug.Log(player.playerId);
         player.SetPlayerTag("alive", "false");
     }
 }
