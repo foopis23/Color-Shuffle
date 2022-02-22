@@ -17,7 +17,7 @@ public class ColorGameRewrite : UdonSharpBehaviour
     [SerializeField] private Transform startPoint;
     [SerializeField] private Transform respawnPoint;
 
-    [Header("Scripts")]    
+    [Header("Scripts")]
     [SerializeField] private PlatformManager platformManager;
     [SerializeField] private ColorDisplayManager colorDisplayManager;
     [SerializeField] private LastGameCanvasController lastGameCanvasController;
@@ -29,6 +29,7 @@ public class ColorGameRewrite : UdonSharpBehaviour
     [UdonSynced] private bool _isPlaying;
     private VRCPlayerApi[] _players = new VRCPlayerApi[16];
     private int _dataCurrentColor;
+    private int _startingPlayerCount;
 
     public void OnGameStart()
     {
@@ -147,25 +148,45 @@ public class ColorGameRewrite : UdonSharpBehaviour
             aliveCount++;
         }
 
-        if (aliveCount == 0) {
-            // TIE Game
-            lastGameCanvasController.rounds = _roundCount.ToString();
-            lastGameCanvasController.winner = "Tie";
-            lastGameCanvasController.UpdateDisplayText();
-            OnGameEnd();
-        } else if (aliveCount == 1) {
-            // WINNER
-            lastGameCanvasController.rounds = _roundCount.ToString();
-            lastGameCanvasController.winner = winner.displayName;
-            lastGameCanvasController.UpdateDisplayText();
-            winner.TeleportTo(respawnPoint.position, respawnPoint.rotation);
-
-            OnGameEnd();
-        } else
+        // if singleplayer mode
+        if (_startingPlayerCount < 2)
         {
-            if (!Networking.IsOwner(gameObject)) return;
-            randomSync.RequestSerialization();
-            SendCustomEventDelayedSeconds("OnRoundStartOwner", secondsBetweenRounds);
+            if (aliveCount > 0)
+            {
+                if (!Networking.IsOwner(gameObject)) return;
+                randomSync.RequestSerialization();
+                SendCustomEventDelayedSeconds("OnRoundStartOwner", secondsBetweenRounds);   
+            }
+            else
+            {
+                lastGameCanvasController.rounds = _roundCount.ToString();
+                lastGameCanvasController.winner = "N/A (Singleplayer)";
+                lastGameCanvasController.UpdateDisplayText();
+                OnGameEnd();
+            }
+        }
+        else
+        {
+            if (aliveCount == 0) {
+                // TIE Game
+                lastGameCanvasController.rounds = _roundCount.ToString();
+                lastGameCanvasController.winner = "Tie";
+                lastGameCanvasController.UpdateDisplayText();
+                OnGameEnd();
+            } else if (aliveCount == 1) {
+                // WINNER
+                lastGameCanvasController.rounds = _roundCount.ToString();
+                lastGameCanvasController.winner = winner.displayName;
+                lastGameCanvasController.UpdateDisplayText();
+                winner.TeleportTo(respawnPoint.position, respawnPoint.rotation);
+
+                OnGameEnd();
+            } else
+            {
+                if (!Networking.IsOwner(gameObject)) return;
+                randomSync.RequestSerialization();
+                SendCustomEventDelayedSeconds("OnRoundStartOwner", secondsBetweenRounds);
+            }
         }
     }
     
@@ -181,12 +202,14 @@ public class ColorGameRewrite : UdonSharpBehaviour
     private void SetAllPlayersAlive()
     {
         // setup player list
+        _startingPlayerCount = 0;
         _players = new VRCPlayerApi[16];
         VRCPlayerApi.GetPlayers(_players);
         foreach (var player in _players)
         {
             if (player == null) continue;
             player.SetPlayerTag("alive", "true");
+            _startingPlayerCount++;
         }
     }
 
