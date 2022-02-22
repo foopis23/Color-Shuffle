@@ -28,8 +28,8 @@ MonoBehaviour:
     - {fileID: 11500000, guid: bb44e2b4b8134f4dbfcbd9326cbef693, type: 3}
     - {fileID: 11500000, guid: 0a9c790dd6cd4c7ca9b9fc28e6e18c40, type: 3}
     - {fileID: 11500000, guid: 363e242aa69ae1d4bb588a023d76b88f, type: 3}
-    - {fileID: 11500000, guid: c1c35656c4213c24e8164f6a77d7cd07, type: 3}
     - {fileID: 11500000, guid: dee6b4c6b8b8db349a8286acbc6c96c1, type: 3}
+    - {fileID: 11500000, guid: 7abc191856906f9479205ffe84f0dde6, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -48,7 +48,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 17
+      Data: 18
     - Name: 
       Entry: 7
       Data: 
@@ -810,7 +810,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: networkManager
+      Data: timerController
     - Name: $v
       Entry: 7
       Data: 55|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
@@ -822,7 +822,7 @@ MonoBehaviour:
       Data: 57|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: NetworkManager, Assembly-CSharp
+      Data: TimerController, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -837,10 +837,10 @@ MonoBehaviour:
       Data: VRCUdonUdonBehaviour
     - Name: symbolOriginalName
       Entry: 1
-      Data: networkManager
+      Data: timerController
     - Name: symbolUniqueName
       Entry: 1
-      Data: networkManager
+      Data: timerController
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -879,7 +879,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: timerController
+      Data: randomSync
     - Name: $v
       Entry: 7
       Data: 60|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
@@ -891,7 +891,7 @@ MonoBehaviour:
       Data: 62|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: TimerController, Assembly-CSharp
+      Data: RandomSync, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -906,10 +906,10 @@ MonoBehaviour:
       Data: VRCUdonUdonBehaviour
     - Name: symbolOriginalName
       Entry: 1
-      Data: timerController
+      Data: randomSync
     - Name: symbolUniqueName
       Entry: 1
-      Data: timerController
+      Data: randomSync
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -1177,6 +1177,63 @@ MonoBehaviour:
     - Name: fieldAttributes
       Entry: 7
       Data: 80|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: _startingPlayerCount
+    - Name: $v
+      Entry: 7
+      Data: 81|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 82|UdonSharp.Compiler.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 9
+      Data: 4
+    - Name: declarationType
+      Entry: 3
+      Data: 2
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: SystemInt32
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: _startingPlayerCount
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: _startingPlayerCount
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 83|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
